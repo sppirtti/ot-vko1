@@ -23,7 +23,7 @@ commit 1966035e843adeb4e43b5344ceff17bd9b5cb4d3
 Author: Samuli Pirttimaki <samuli.pirttimaki@helsinki.fi>
 Date:   Tue Nov 6 16:24:17 2018 +0200
 
-    tiedostot lis�tty
+    tiedostot lisätty
 
  file1 | 0
  file2 | 0
@@ -50,3 +50,5 @@ Date:   Tue Nov 6 16:14:16 2018 +0200
  1 file changed, 0 insertions(+), 0 deletions(-)
 
 commit e335b3384a128c010e079e2754f27fc94cbf34dc
+
+harmiton lisäys

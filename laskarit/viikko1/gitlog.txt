@@ -1,0 +1,52 @@
+commit 402f44c008fdb9c215515b2805f1d3d222ffadd6
+Author: Samuli Pirttimaki <samuli.pirttimaki@helsinki.fi>
+Date:   Tue Nov 6 16:31:13 2018 +0200
+
+    1 poistettu, 2 nimetty 22
+
+ tiedostoja/file1             | 0
+ tiedostoja/{file2 => file22} | 0
+ 2 files changed, 0 insertions(+), 0 deletions(-)
+
+commit 4bf758dfea1dc318b55fd944cdb63a66fead8d76
+Author: Samuli Pirttimaki <samuli.pirttimaki@helsinki.fi>
+Date:   Tue Nov 6 16:26:55 2018 +0200
+
+    siirretty paikkaa
+
+ file1 => tiedostoja/file1 | 0
+ file2 => tiedostoja/file2 | 0
+ file3 => tiedostoja/file3 | 0
+ 3 files changed, 0 insertions(+), 0 deletions(-)
+
+commit 1966035e843adeb4e43b5344ceff17bd9b5cb4d3
+Author: Samuli Pirttimaki <samuli.pirttimaki@helsinki.fi>
+Date:   Tue Nov 6 16:24:17 2018 +0200
+
+    tiedostot lisätty
+
+ file1 | 0
+ file2 | 0
+ file3 | 0
+ 3 files changed, 0 insertions(+), 0 deletions(-)
+
+commit 2726832c0baf35507e5d8c2518eca549981ef047
+Author: Samuli Pirttimaki <samuli.pirttimaki@helsinki.fi>
+Date:   Tue Nov 6 16:17:19 2018 +0200
+
+    ekasta poistettu, kolmosta muokattu
+
+ eka.txt    | 9 +--------
+ kolmas.txt | 4 +++-
+ 2 files changed, 4 insertions(+), 9 deletions(-)
+
+commit df99128041042c6551d64da6d42b480461944d2c
+Author: Samuli Pirttimaki <samuli.pirttimaki@helsinki.fi>
+Date:   Tue Nov 6 16:14:16 2018 +0200
+
+    tiedosto nimetty ekaksi
+
+ tiedosto.txt => eka.txt | 0
+ 1 file changed, 0 insertions(+), 0 deletions(-)
+
+commit e335b3384a128c010e079e2754f27fc94cbf34dc

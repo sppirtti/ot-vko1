@@ -12,6 +12,8 @@ Sovellus luodaan aluksi yhdellä käyttäjällä, työntekijällä. Myöhemmin s
 
 Käyttöliittymässä on neljä ruutua, yksi sisäänkirjautumiselle, yksi uuden käyttäjän luonnille, yksi työajan sisään- ja ulosleimaukselle ja viimeinen leimausten ja muun datan tarkastamiselle.
 
+
+
 ## Perusversion tarjoama toiminnallisuus
 
 ### Ennen Kirjautumista

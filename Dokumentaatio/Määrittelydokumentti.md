@@ -17,11 +17,11 @@ Käyttöliittymässä on neljä ruutua, yksi sisäänkirjautumiselle, yksi uuden
 ### Ennen Kirjautumista
 
 - Käyttäjä voi luoda uuden tunnuksen
-  - Uniikkikäyttäjätunnus, ehkä salasanavaatimus
+  - Uniikkikäyttäjätunnus, minimi 4 merkkiä. Muodostetaan esim. sukunimi 3 ensimmäistä kirjainta ja etunimen ensimmäinen kirjain.
   
  - Käyttäjä voi kirjautua järjestelmään
    - Käyttäjän tarvitsee tietää vain tunnus, ja jatkossa ehkä salasana
-   - Jos käyttäjää ei ole, ei voi kirjautua sisään
+   - Jos käyttäjää ei ole, ei voi kirjautua sisään (Huomautusikkuna/error)
    
 ### Kirjautumisen jälkeen
  
@@ -40,3 +40,4 @@ Perusversion jälkeen voidaan sovellukseen lisätä paljon toiminnallisukksia, e
 - Palkanmaksu työajan mukaan
 - Vapaapäivät yms. poikkeustilanteet
 - Salasana käyttäjätunnukselle
+- hienoja kuvaajia yms. dataa

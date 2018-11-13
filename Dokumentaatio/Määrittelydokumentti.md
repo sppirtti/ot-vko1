@@ -12,7 +12,7 @@ Sovellus luodaan aluksi yhdellä käyttäjällä, työntekijällä. Myöhemmin s
 
 Käyttöliittymässä on neljä ruutua, yksi sisäänkirjautumiselle, yksi uuden käyttäjän luonnille, yksi työajan sisään- ja ulosleimaukselle ja viimeinen leimausten ja muun datan tarkastamiselle.
 
-
+<img src="https://github.com/sppirtti/ot2018/blob/master/Dokumentaatio/k%C3%A4ytt%C3%B6liittym%C3%A4%20esim.png" width="750">
 
 ## Perusversion tarjoama toiminnallisuus
 

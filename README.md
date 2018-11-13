@@ -15,4 +15,4 @@
 
 ## Harjoitustyö
 
-[Työtuntiaikataulu] (https://github.com/sppirtti/ot2018/blob/master/Dokumentaatio/Ty%C3%B6aikataulu.md)
+[Työtuntiaikataulu](https://github.com/sppirtti/ot2018/blob/master/Dokumentaatio/Ty%C3%B6aikataulu.md)

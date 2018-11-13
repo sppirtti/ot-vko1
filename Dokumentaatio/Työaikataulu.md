@@ -1,0 +1,3 @@
+|PVM | Aika | Mitä tehty|
+|--- | ---- | ----------|
+|13.11 | 2 | Lisätty dokumentaatiota + vaatimusmäärittely|

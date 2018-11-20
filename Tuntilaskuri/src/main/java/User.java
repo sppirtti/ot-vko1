@@ -17,6 +17,7 @@ public class User {
     public User(String firstname, String surname) {
         this.firstname = firstname;
         this.surname = surname;
+        setUsername();
         
     }
     

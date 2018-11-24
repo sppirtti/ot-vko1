@@ -40,13 +40,15 @@ public class TimerUI extends Application {
         launch(args);
     }
 
+    
     @Override
-    public void init() {
+    public void init() throws Exception {
+        
 
         UserFileDao userDao = new UserFileDao("users.txt");
 
         appLogic = new AppLogic(userDao);
-
+        
     }
 
     @Override
@@ -66,7 +68,6 @@ public class TimerUI extends Application {
 
         Label loginMessage = new Label("");
         loginMessage.setFont(new Font("Serif", 14));
-        
 
         //set loginbutton
         VBox loginLayout = new VBox();
@@ -107,8 +108,6 @@ public class TimerUI extends Application {
         Label surInd = new Label("Surname:");
         TextField surField = new TextField("");
 
-        
-
         surName.getChildren().addAll(surInd, surField);
 
         Label userCreation = new Label("");
@@ -148,7 +147,6 @@ public class TimerUI extends Application {
             } else {
                 sur = surname.substring(0, 3);
             }
-            
 
             String username = new String(String.valueOf(firstname.charAt(0)) + sur);
 
@@ -158,14 +156,6 @@ public class TimerUI extends Application {
             if (surname.length() < 1) {
                 userCreation.setText("Surname too short!");
             } else if (appLogic.createNewUser(firstname, surname)) {
-
-                
-                
-                try {
-                    Thread.sleep(2000);
-                } catch (InterruptedException ex) {
-                    Logger.getLogger(TimerUI.class.getName()).log(Level.SEVERE, null, ex);
-                }
 
                 primaryStage.setScene(loginView);
                 loginMessage.setText("New user created!" + "\n" + "Username: " + username);

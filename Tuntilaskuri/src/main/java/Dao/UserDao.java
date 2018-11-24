@@ -13,7 +13,7 @@ import Domain.User ;
 
 public interface UserDao {
     
-  User createUser (User user);
+  User createUser (User user) throws Exception;
   
   User findByUsername (String username);
   

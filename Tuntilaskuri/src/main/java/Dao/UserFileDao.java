@@ -19,24 +19,25 @@ import java.util.Scanner;
 public class UserFileDao implements UserDao {
 
     List<User> users;
-    String file;
+    String filename;
+    
 
-    public UserFileDao(String file) throws Exception {
-        this.file = file;
+    public UserFileDao(String filename) throws Exception {
+        this.filename = filename;
         users = new ArrayList<User>();
 
         try {
             
-            Scanner scanner = new Scanner(new File(file));
+            Scanner scanner = new Scanner(filename);
             while (scanner.hasNextLine()) {
                 String[] split = scanner.nextLine().split(";");
                 User newUser = new User(split[0], split[1]);
                 users.add(newUser);
-                
+               
                 
             }
         } catch (Exception e) {
-            FileWriter fw = new FileWriter(new File(file));
+            FileWriter fw = new FileWriter(filename);
             fw.close();
         }
     }
@@ -46,11 +47,11 @@ public class UserFileDao implements UserDao {
 
     private void save() throws Exception {
 
-        FileWriter fw = new FileWriter(new File(file));
+        FileWriter fw = new FileWriter(filename);
         for (User user : users) {
             
             fw.write(user.getFirstname() + ";" + user.getSurname() + ";" + user.getUsername() + "\n");
-            System.out.println(file);
+            System.out.println("tallennushommia" + filename);
         }
     }
 
@@ -70,6 +71,7 @@ public class UserFileDao implements UserDao {
     public User createUser(User user) throws Exception {
         
         users.add(user);
+        System.out.println("luonti" + user.toString());
         save();
         return user;
     }

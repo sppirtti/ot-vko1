@@ -8,9 +8,6 @@ package Interface;
 import Dao.UserFileDao;
 import Domain.AppLogic;
 
-import java.util.Properties;
-import java.util.logging.Level;
-import java.util.logging.Logger;
 import javafx.application.Application;
 import javafx.geometry.Insets;
 import javafx.scene.Scene;

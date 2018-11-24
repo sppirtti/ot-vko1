@@ -5,6 +5,8 @@
  */
 package Interface;
 
+import Dao.UserFileDao;
+import Domain.AppLogic;
 import javafx.application.Application;
 import javafx.geometry.Insets;
 import javafx.scene.Scene;
@@ -29,6 +31,10 @@ public class TimerUI extends Application {
         // TODO code application logic here
 
         launch(args);
+    }
+
+    public void init() {
+
     }
 
     @Override
@@ -65,16 +71,12 @@ public class TimerUI extends Application {
         primaryStage.setScene(loginView);
         primaryStage.show();
 
-       
-        
-        
-        
         //New user screen
         //create panes
         HBox firstName = new HBox();
         HBox surName = new HBox();
         HBox buttons = new HBox();
-        
+
         //Create fields and indicators
         firstName.setSpacing(20);
         surName.setSpacing(20);
@@ -82,43 +84,52 @@ public class TimerUI extends Application {
 
         Label firstInd = new Label("First name: ");
         TextField firstField = new TextField("");
-        
-        firstName.getChildren().addAll(firstInd,firstField);
-        
-        Label surInd = new Label ("Surname:");
+
+        firstName.getChildren().addAll(firstInd, firstField);
+
+        Label surInd = new Label("Surname:");
         TextField surField = new TextField("");
-        
-        surName.getChildren().addAll(surInd,surField);
-        
+
+        surName.getChildren().addAll(surInd, surField);
+
         //Create buttons
-        
-        Button create = new Button ("Create");
-        Button cancel = new Button ("Cancel");
-        
-        buttons.getChildren().addAll(create,cancel);
+        Button create = new Button("Create");
+        Button cancel = new Button("Cancel");
+
+        buttons.getChildren().addAll(create, cancel);
         //Create layout
         VBox createLayout = new VBox();
-        
+
         createLayout.setSpacing(20);
         createLayout.setPadding(new Insets(20));
-        
-        createLayout.getChildren().addAll(firstName,surName, buttons);
-        
+
+        createLayout.getChildren().addAll(firstName, surName, buttons);
+
         Scene newuserScene = new Scene(createLayout);
-        
+
+        Label userCreation = new Label();
+
         //BUTTON ACTIONS
-        
-        newuserbutton.setOnAction(e-> {
+        newuserbutton.setOnAction(e -> {
             primaryStage.setScene(newuserScene);
         });
-        
-        cancel.setOnAction(e->{
+
+        cancel.setOnAction(e -> {
             primaryStage.setScene(loginView);
         });
-        
-       
-        
 
+        create.setOnAction(e -> {
+            String firstname = firstField.getText();
+            String surname = surField.getText();
+
+            if (firstname.length() < 1) {
+                userCreation.setText("First name too short!");
+            }
+            if (surname.length() < 1) {
+                userCreation.setText("Surname too short!");
+            }
+
+        });
     }
 
 }

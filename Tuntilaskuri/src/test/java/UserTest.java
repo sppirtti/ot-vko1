@@ -1,4 +1,5 @@
 
+import Domain.User;
 import static org.junit.Assert.assertEquals;
 import org.junit.Test;
 
@@ -22,5 +23,12 @@ public class UserTest {
         assertEquals("mtep", mtep.getUsername());
         
     }
+    @Test
+    public void SurnameShorterThanFour() {
+        User user = new User ("Li", "Ha");
+        
+        assertEquals("LHa", user.getUsername());
+    }
+    
     
 }

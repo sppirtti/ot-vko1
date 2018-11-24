@@ -9,6 +9,13 @@ package Dao;
  *
  * @author Samuli
  */
-public class UserDao {
+import Domain.User ;
+
+public interface UserDao {
+    
+  User createUser (User user);
+  
+  User findByUsername (String username);
+  
     
 }

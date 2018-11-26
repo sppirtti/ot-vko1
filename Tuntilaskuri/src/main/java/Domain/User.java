@@ -21,6 +21,12 @@ public class User {
         setUsername();
 
     }
+    
+    public User(String firstname, String surname, String username) {
+        this.firstname = firstname;
+        this.surname = surname;
+        this.username = username;
+    }
 
     public String getFirstname() {
         return firstname;

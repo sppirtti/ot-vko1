@@ -17,56 +17,54 @@ import java.util.Scanner;
  * @author Samuli
  */
 public class UserFileDao implements UserDao {
-
+    
     List<User> users;
     String filename;
     
-
     public UserFileDao(String filename) throws Exception {
         this.filename = filename;
-        users = new ArrayList<User>();
-
+        users = new ArrayList<>();
+        System.out.println("uusi dao");
+        
         try {
             
-            Scanner scanner = new Scanner(filename);
+            Scanner scanner = new Scanner(new File(filename));
+            System.out.println("luetaan lista");
             while (scanner.hasNextLine()) {
+                
                 String[] split = scanner.nextLine().split(";");
-                User newUser = new User(split[0], split[1]);
+                User newUser = new User(split[0], split[1], split[2]);
                 users.add(newUser);
-               
+                System.out.println("1");
                 
             }
         } catch (Exception e) {
-            FileWriter fw = new FileWriter(filename);
+            FileWriter fw = new FileWriter(new File(filename));
             fw.close();
         }
     }
-
     
-    
-
     private void save() throws Exception {
-
-        FileWriter fw = new FileWriter(filename);
-        for (User user : users) {
-            
-            fw.write(user.getFirstname() + ";" + user.getSurname() + ";" + user.getUsername() + "\n");
-            System.out.println("tallennushommia" + filename);
+        
+        try (FileWriter fw = new FileWriter(new File(filename))) {
+            for (User u : users) {
+                fw.write(u.getFirstname() + ";" + u.getSurname() + ";" + u.getUsername() + "\n");
+            }
         }
     }
-
+    
     @Override
     public User findByUsername(String username
     ) {
-
+        
         return users.stream()
                 .filter(u -> u.getUsername()
                 .equals(username))
                 .findFirst()
                 .orElse(null);
-
+        
     }
-
+    
     @Override
     public User createUser(User user) throws Exception {
         
@@ -75,5 +73,5 @@ public class UserFileDao implements UserDao {
         save();
         return user;
     }
-
+    
 }

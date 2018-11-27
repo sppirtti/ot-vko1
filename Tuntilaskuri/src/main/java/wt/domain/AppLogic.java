@@ -1,7 +1,7 @@
-package Domain;
+package wt.domain;
 
-import Dao.UserDao;
-import Dao.UserFileDao;
+import wt.dao.UserDao;
+import wt.dao.UserFileDao;
 
 /*
  * To change this license header, choose License Headers in Project Properties.

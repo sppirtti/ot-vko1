@@ -3,19 +3,19 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package Dao;
+package wt.dao;
 
 /**
  *
  * @author Samuli
  */
-import Domain.User ;
+import wt.domain.User;
 
 public interface UserDao {
     
-  User createUser (User user) throws Exception;
+  User createUser(User user) throws Exception;
   
-  User findByUsername (String username);
+  User findByUsername(String username);
   
     
 }

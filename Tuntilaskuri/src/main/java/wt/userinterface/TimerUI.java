@@ -3,10 +3,10 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package Interface;
+package wt.userinterface;
 
-import Dao.UserFileDao;
-import Domain.AppLogic;
+import wt.dao.UserFileDao;
+import wt.domain.AppLogic;
 
 import javafx.application.Application;
 import javafx.geometry.Insets;
@@ -198,7 +198,7 @@ public class TimerUI extends Application {
         int i = 0;
         timerButton.setOnAction(action -> {
             
-            if(i%2==0) {
+            if (i % 2 == 0) {
                 timerButton.setText("Stop Timer");
                 
                 

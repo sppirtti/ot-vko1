@@ -1,5 +1,5 @@
 
-import Domain.User;
+import wt.domain.User;
 import static org.junit.Assert.assertEquals;
 import org.junit.Test;
 

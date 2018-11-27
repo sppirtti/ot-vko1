@@ -195,7 +195,6 @@ public class TimerUI extends Application {
         loginbutton.setOnAction(action -> {
             primaryStage.setScene(timerScene);
         });
-        
         int i = 0;
         timerButton.setOnAction(action -> {
             

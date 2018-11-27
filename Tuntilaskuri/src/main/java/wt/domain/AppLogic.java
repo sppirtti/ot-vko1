@@ -23,13 +23,11 @@ public class AppLogic {
 
     public boolean createNewUser(String firstname, String surname) {
 
-        //NOT CHECKING IF ALREADY EXISTS WITH SAME USERNAME
         User u = new User(firstname, surname);
-        
-        if(userDao.findByUsername(u.getUsername()) != null) {
+
+        if (userDao.findByUsername(u.getUsername()) != null) {
             return false;
         }
-
 
         try {
             System.out.println("lähdetään daoon");
@@ -39,7 +37,7 @@ public class AppLogic {
         } catch (Exception e) {
             return false;
         }
-        
+
         System.out.println("palataan daosta");
         return true;
     }

@@ -195,7 +195,7 @@ public class TimerUI extends Application {
                 loginMessage.setText("New user created!" + "\n" + "Username: " + username);
                 
             } else  {
-                userCreation.setText("User with same Username exists!" + "\n" + "Contact IT-Department!");
+                userCreation.setText("User with same Username exists!" + "\n" + "Contact Support!");
             }
             
         });

@@ -115,7 +115,7 @@ public class TimerUI extends Application {
         buttons.getChildren().addAll(create, cancel);
         //Create layout
         VBox createLayout = new VBox();
-        
+        createLayout.setMinHeight(230);
         createLayout.setSpacing(20);
         createLayout.setPadding(new Insets(20));
         
@@ -194,6 +194,8 @@ public class TimerUI extends Application {
                 primaryStage.setScene(loginView);
                 loginMessage.setText("New user created!" + "\n" + "Username: " + username);
                 
+            } else  {
+                userCreation.setText("User with same Username exists!" + "\n" + "Contact IT-Department!");
             }
             
         });

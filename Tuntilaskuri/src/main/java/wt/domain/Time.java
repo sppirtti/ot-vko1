@@ -32,6 +32,18 @@ public class Time {
     public int getDay() {
         return this.day;
     }
+    public int getStartHour() {
+        return this.startHour;
+    }
+    public int getStartMinute() {
+        return this.startMinute;
+    }
+    public int getEndHour() {
+        return this.endHour;
+    }
+    public int getEndMinute() {
+        return this.endMinute;
+    }
     
     
     

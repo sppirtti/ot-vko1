@@ -25,19 +25,21 @@ public class AppLogic {
 
         //NOT CHECKING IF ALREADY EXISTS WITH SAME USERNAME
         User u = new User(firstname, surname);
+        
+        if(userDao.findByUsername(u.getUsername()) != null) {
+            return false;
+        }
+
 
         try {
             System.out.println("lähdetään daoon");
-            System.out.println(u.getUsername());
-            System.out.println(u.getFirstname());
-            System.out.println(u.getSurname());
-            userDao.createUser(u);
-            
 
+            userDao.createUser(u);
 
         } catch (Exception e) {
             return false;
         }
+        
         System.out.println("palataan daosta");
         return true;
     }

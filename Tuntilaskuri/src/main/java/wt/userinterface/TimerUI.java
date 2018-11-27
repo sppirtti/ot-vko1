@@ -201,7 +201,14 @@ public class TimerUI extends Application {
         });
         
         loginbutton.setOnAction(action -> {
-            primaryStage.setScene(timerScene);
+            
+            if(appLogic.userLogin(loginfield.getText())) {
+                primaryStage.setScene(timerScene);
+                
+            } else {
+                loginMessage.setText("User doesn't exist!");
+            }
+            
         });
         
         timerButton.setOnAction(action -> {

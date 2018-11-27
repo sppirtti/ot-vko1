@@ -42,4 +42,11 @@ public class AppLogic {
         return true;
     }
 
+    public boolean userLogin(String username) {
+        if (userDao.findByUsername(username) != null) {
+            return true;
+        }
+        return false;
+    }
+
 }

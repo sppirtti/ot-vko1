@@ -1,3 +1,4 @@
 samuli;pirtti;spir
 jussi;virtane;jvir
 heitin;luotain;hluo
+kissa;koira;kkoi

@@ -11,6 +11,7 @@ import wt.domain.AppLogic;
 import javafx.application.Application;
 import javafx.geometry.Insets;
 import javafx.scene.Scene;
+import javafx.scene.control.Alert;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
@@ -124,7 +125,7 @@ public class TimerUI extends Application {
 
         //TimerScreen
         Button logOutButton = new Button("Log Out");
-        Button timerButton = new Button("Start timer");
+        Button timerButton = new Button("Start Timer");
         
         Label date = new Label("Date (MM/DD): ");
         
@@ -132,8 +133,9 @@ public class TimerUI extends Application {
         Label timeStarted = new Label("");
         Label timeStopped = new Label("");
         
-        Label started = new Label("Time Started: ");
-        Label stopped = new Label("Time Stopped: ");
+        Label started = new Label("Time Started (HH/MM): ");
+        Label stopped = new Label("Time Stopped (HH/MM): ");
+        Label timerLabel = new Label ("");
         
         HBox dateBox = new HBox();
         HBox startBox = new HBox();
@@ -150,10 +152,14 @@ public class TimerUI extends Application {
         VBox timerLayout = new VBox();
         timerLayout.setSpacing(20);
         timerLayout.setPadding(new Insets(20));
-        
-        timerLayout.getChildren().addAll(dateBox, startBox, stopBox, timerButton, logOutButton);
+        timerLayout.setMinWidth(300);
+        timerLayout.getChildren().addAll(dateBox, startBox, stopBox, timerButton, logOutButton, timerLabel);
         
         Scene timerScene = new Scene(timerLayout);
+        
+        
+        
+        
 
         //BUTTON ACTIONS
         newuserbutton.setOnAction(e -> {
@@ -209,7 +215,7 @@ public class TimerUI extends Application {
         
         logOutButton.setOnAction(action -> {
             if (timerButton.getText().equals("Stop Timer")) {
-                System.out.println("lopeta aika ensin");
+                timerLabel.setText("Stop timer before logging out!");
             } else {
                 primaryStage.setScene(loginView);
             }

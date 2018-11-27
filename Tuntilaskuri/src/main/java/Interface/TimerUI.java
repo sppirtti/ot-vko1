@@ -37,15 +37,13 @@ public class TimerUI extends Application {
         launch(args);
     }
 
-    
     @Override
     public void init() throws Exception {
-        
 
         UserFileDao userDao = new UserFileDao("users.txt");
 
         appLogic = new AppLogic(userDao);
-        
+
     }
 
     @Override
@@ -123,41 +121,40 @@ public class TimerUI extends Application {
         createLayout.getChildren().addAll(firstName, surName, userName, buttons, userCreation);
 
         Scene newuserScene = new Scene(createLayout);
-        
+
         //TimerScreen
-        
-        Button logOutButton = new Button ("Log Out");
-        Button timerButton = new Button ("Start timer");
-        
-        Label date = new Label ("Date (MM/DD): ");
-        
-        Label timeDate = new Label ("");
-        Label timeStarted = new Label ("");
-        Label timeStopped = new Label ("");
-        
+        Button logOutButton = new Button("Log Out");
+        Button timerButton = new Button("Start timer");
+
+        Label date = new Label("Date (MM/DD): ");
+
+        Label timeDate = new Label("");
+        Label timeStarted = new Label("");
+        Label timeStopped = new Label("");
+
         Label started = new Label("Time Started: ");
-        Label stopped = new Label ("Time Stopped: ");
-        
+        Label stopped = new Label("Time Stopped: ");
+
         HBox dateBox = new HBox();
         HBox startBox = new HBox();
         HBox stopBox = new HBox();
-        
+
         dateBox.setSpacing(20);
         startBox.setSpacing(20);
         stopBox.setSpacing(20);
-        
-        dateBox.getChildren().addAll(date,timeDate);
+
+        dateBox.getChildren().addAll(date, timeDate);
         startBox.getChildren().addAll(started, timeStarted);
         stopBox.getChildren().addAll(stopped, timeStopped);
-        
+
         VBox timerLayout = new VBox();
         timerLayout.setSpacing(20);
         timerLayout.setPadding(new Insets(20));
-        
+
         timerLayout.getChildren().addAll(dateBox, startBox, stopBox, timerButton, logOutButton);
-        
+
         Scene timerScene = new Scene(timerLayout);
-        
+
         //BUTTON ACTIONS
         newuserbutton.setOnAction(e -> {
             primaryStage.setScene(newuserScene);
@@ -194,35 +191,33 @@ public class TimerUI extends Application {
             }
 
         });
-        
+
         loginbutton.setOnAction(action -> {
             primaryStage.setScene(timerScene);
         });
         
-        
+        int i = 0;
         timerButton.setOnAction(action -> {
-            int i = 0;
-            if (i % 2 == 0) {
-            timerButton.setText("Stop Timer");
             
-                System.out.println(i);
-            
-            }else {
-                timerButton.setText("Start Timer");
-                i++;
-                System.out.println(i + "kakkone");
+            if(i%2==0) {
+                timerButton.setText("Stop Timer");
                 
+                
+            } else {
+                timerButton.setText("Start Timer");
+            }
+          
+        });
+        
+
+        logOutButton.setOnAction(action -> {
+            if (timerButton.getText().equals("Stop Timer")) {
+                System.out.println("lopeta aika ensin");
+            } else {
+                primaryStage.setScene(loginView);
             }
         });
-        
-        logOutButton.setOnAction(action -> {
-           if (timerButton.getText().equals("Stop Timer")) {
-               System.out.println("lopeta aika ensin");
-           } else {
-               primaryStage.setScene(loginView);
-           }
-        });
-        
+
     }
 
 }

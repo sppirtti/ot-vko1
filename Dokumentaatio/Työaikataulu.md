@@ -5,3 +5,5 @@
 |23.11 | 2 | Luotu käyttöliittymää |
 |24.11 | 2 | Tutkin tiedontallennustapoja ja päädyin tekstitiedostoihin -> helpompi lukea javalla |
 |24.11 | 2 | Koodia uutta käyttäjää varten, ei toimi vielä |
+|25.11 | 1 | Bugfix käyttäjätallennukseen|
+|26.11 | 3 | ajastinruudun luontia ja koodin siistimistä|

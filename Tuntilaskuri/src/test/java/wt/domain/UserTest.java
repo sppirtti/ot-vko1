@@ -1,3 +1,5 @@
+package wt.domain;
+
 
 import wt.domain.User;
 import static org.junit.Assert.assertEquals;

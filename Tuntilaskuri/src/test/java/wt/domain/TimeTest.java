@@ -19,7 +19,7 @@ public class TimeTest {
     
     @Before
     public void setUp() {
-        time = new Time(12,1,12,30,16,40);
+        time = new Time("MTep",12,1,12,30,16,40);
     }
     
     @Test

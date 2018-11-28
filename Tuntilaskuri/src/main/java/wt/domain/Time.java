@@ -10,15 +10,17 @@ package wt.domain;
  * @author Samuli
  */
 public class Time {
-    
+
+    private String username;
     private int month;
     private int day;
     private int startHour;
     private int startMinute;
     private int endHour;
     private int endMinute;
-    
-    public Time(int month, int day, int startHour, int startMinute, int endHour, int endMinute) {
+
+    public Time(String username, int month, int day, int startHour, int startMinute, int endHour, int endMinute) {
+        this.username = username;
         this.month = month;
         this.day = day;
         this.startHour = startHour;
@@ -26,25 +28,33 @@ public class Time {
         this.endHour = endHour;
         this.endMinute = endMinute;
     }
+
+    public String getUsername() {
+        return this.username;
+    }
+
     public int getMonth() {
         return this.month;
     }
+
     public int getDay() {
         return this.day;
     }
+
     public int getStartHour() {
         return this.startHour;
     }
+
     public int getStartMinute() {
         return this.startMinute;
     }
+
     public int getEndHour() {
         return this.endHour;
     }
+
     public int getEndMinute() {
         return this.endMinute;
     }
-    
-    
-    
+
 }

@@ -218,10 +218,11 @@ public class TimerUI extends Application {
                 timeStarted.setText(appLogic.getHour().toString() + ":" + appLogic.getMinute().toString());
 
             } else {
-                appLogic.getHour();
-                appLogic.getMinute();
+
                 timerButton.setText("Start Timer");
                 timeStopped.setText(appLogic.getEndHour().toString() + ":" + appLogic.getEndMinute().toString());
+
+                appLogic.createNewTime();
             }
 
         });

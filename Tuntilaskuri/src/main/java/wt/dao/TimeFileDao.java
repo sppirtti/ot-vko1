@@ -22,7 +22,7 @@ public class TimeFileDao implements TimeDao {
     public List<Time> times;
     private String filename;
 
-    public TimeFileDao(String filename) {
+    public TimeFileDao(String filename) throws Exception {
 
         this.filename = filename;
         times = new ArrayList<>();
@@ -30,15 +30,16 @@ public class TimeFileDao implements TimeDao {
             Scanner scanner = new Scanner(new File(filename));
             while (scanner.hasNext()) {
                 String[] split = scanner.nextLine().split(";");
-                Time newTime = new Time(split[0], Integer.parseInt(split[1]), Integer.parseInt(split[2]),Integer.parseInt(split[3]),
-                        Integer.parseInt(split[4]),Integer.parseInt(split[5]), Integer.parseInt(split[6]));
-                
+                Time newTime = new Time(split[0], Integer.parseInt(split[1]), Integer.parseInt(split[2]), Integer.parseInt(split[3]),
+                        Integer.parseInt(split[4]), Integer.parseInt(split[5]), Integer.parseInt(split[6]));
+
                 times.add(newTime);
-                
+
             }
 
         } catch (Exception e) {
-            
+            FileWriter fw = new FileWriter(new File(filename));
+            fw.close();
 
         }
     }
@@ -50,7 +51,7 @@ public class TimeFileDao implements TimeDao {
                         t.getUsername() + ";" + t.getMonth() + ";"
                         + t.getDay() + ";" + t.getStartHour() + ";"
                         + t.getStartMinute() + ";" + t.getEndHour() + ";"
-                        + t.getEndMinute());
+                        + t.getEndMinute() + "\n");
 
             }
 
@@ -58,15 +59,16 @@ public class TimeFileDao implements TimeDao {
     }
 
     @Override
-    public Time add(Time time) throws Exception {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    public Time addTime(Time time) throws Exception {
+        times.add(time);
+        save();
+
+        return time;
     }
-    
-    
 
     @Override
     public List<Time> getAll() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        return times;
     }
 
 }

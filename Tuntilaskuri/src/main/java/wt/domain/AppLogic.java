@@ -1,8 +1,11 @@
 package wt.domain;
 
+import java.util.ArrayList;
 import java.util.Calendar;
 import java.util.Date;
+import java.util.List;
 import java.util.Locale;
+import java.util.stream.Collectors;
 import wt.dao.TimeDao;
 import wt.dao.UserDao;
 
@@ -85,16 +88,29 @@ public class AppLogic {
         return stop.getMinutes();
     }
     
-    public boolean createNewTime(String username, int month, int day, int startHour, int startMinute, int endHour, int endMinute) {
+    public boolean createNewTime() {
         
         Time t = new Time(u.getUsername(),getMonth(),getDate(),getHour(), getMinute(), getEndHour(), getEndMinute());
         
         try {
-            timeDao.add(t);
+            timeDao.addTime(t);
         } catch (Exception e) {
             return false;
         }
         return true;
+    }
+    
+    public List<Time> getTimes() {
+        
+        if (u == null) {
+            return new ArrayList<>();
+        }
+        
+        return timeDao.getAll()
+                .stream()
+                .filter(t -> t.getUsername().equals(u.getUsername()))
+                .collect(Collectors.toList());
+        
     }
     
     

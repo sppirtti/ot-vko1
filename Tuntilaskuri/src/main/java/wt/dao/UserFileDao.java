@@ -69,7 +69,7 @@ public class UserFileDao implements UserDao {
     public User createUser(User user) throws Exception {
         
         users.add(user);
-        System.out.println("luonti" + user.toString());
+        
         save();
         return user;
     }

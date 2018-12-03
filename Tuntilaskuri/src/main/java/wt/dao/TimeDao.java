@@ -14,7 +14,7 @@ import wt.domain.Time;
 
 public interface TimeDao {
     
-    Time add(Time time) throws Exception;
+    Time addTime(Time time) throws Exception;
     
     List<Time> getAll();
     

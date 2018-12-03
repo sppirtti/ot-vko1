@@ -5,6 +5,7 @@
  */
 package wt.dao;
 
+import java.util.ArrayList;
 import java.util.List;
 import wt.domain.Time;
 
@@ -15,11 +16,12 @@ import wt.domain.Time;
 public class TimeFileDao implements TimeDao {
     
     public List<Time> times;
-    private String timefile;
+    private String filename;
     
-    public TimeFileDao(String timefile) {
+    public TimeFileDao(String filename) {
         
-        this.timefile = timefile;
+        this.filename = filename;
+        times = new ArrayList<>();
     }
 
     @Override

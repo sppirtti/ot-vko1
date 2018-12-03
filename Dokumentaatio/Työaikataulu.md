@@ -9,6 +9,6 @@
 |26.11 | 3 | ajastinruudun luontia ja koodin siistimistä|
 |27.11 | 3 | testejä, checkstyle, sovelluksen toimintaa|
 |28.11 | 1 | Aika luokkia aloitettu |
+|3.12 | 6 | Aika ja päivämääränäkyvyys, aikatallennusta |
 
-
-|YHTEENSÄ|19| Tuntia |
+|YHTEENSÄ|25| Tuntia |

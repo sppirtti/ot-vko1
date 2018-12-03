@@ -16,10 +16,15 @@ import org.junit.Test;
 public class TimeTest {
     
     Time time;
+    User u;
     
     @Before
+    
+    
+    
     public void setUp() {
-        time = new Time("MTep",12,1,12,30,16,40);
+        User u = new User("matti", "teppo");
+        time = new Time(u,12,1,12,30,16,40);
     }
     
     @Test

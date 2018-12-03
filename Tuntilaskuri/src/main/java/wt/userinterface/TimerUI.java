@@ -138,6 +138,8 @@ public class TimerUI extends Application {
         Label started = new Label("Time Started(HH/MM): ");
         Label stopped = new Label("Time Stopped(HH/MM): ");
         Label timerLabel = new Label("");
+        
+        Button history = new Button ("Show History");
 
         HBox dateBox = new HBox();
         HBox startBox = new HBox();
@@ -155,10 +157,25 @@ public class TimerUI extends Application {
         timerLayout.setSpacing(20);
         timerLayout.setPadding(new Insets(20));
         timerLayout.setMinWidth(350);
-        timerLayout.getChildren().addAll(dateBox, startBox, stopBox, timerButton, logOutButton, timerLabel);
+        timerLayout.getChildren().addAll(dateBox, startBox, stopBox, timerButton, logOutButton, timerLabel, history);
 
         Scene timerScene = new Scene(timerLayout);
-
+        
+        //TIME HISTORY SCREEN
+        
+        Label historyLabel = new Label ("");
+        Button back = new Button ("Back");
+        VBox historyBox = new VBox();
+        
+        historyBox.setMinSize(500, 800);
+        historyBox.setSpacing(20);
+        historyBox.setPadding(new Insets(20));
+        
+        historyBox.getChildren().addAll(historyLabel, back);
+        
+        Scene historyScene = new Scene (historyBox);
+        
+        
         //BUTTON ACTIONS
         newuserbutton.setOnAction(e -> {
             primaryStage.setScene(newuserScene);
@@ -201,6 +218,7 @@ public class TimerUI extends Application {
         loginbutton.setOnAction(action -> {
 
             if (appLogic.userLogin(loginfield.getText())) {
+                
                 primaryStage.setScene(timerScene);
 
             } else {
@@ -216,7 +234,7 @@ public class TimerUI extends Application {
 
                 timeDate.setText(appLogic.getDate().toString() + "." + appLogic.getMonth().toString());
                 timeStarted.setText(appLogic.getHour().toString() + ":" + appLogic.getMinute().toString());
-                System.out.println("aika alkaa");
+                
 
             } else {
 
@@ -224,7 +242,7 @@ public class TimerUI extends Application {
                 timeStopped.setText(appLogic.getEndHour().toString() + ":" + appLogic.getEndMinute().toString());
                 appLogic.createNewTime();
 
-                System.out.println("valmis");
+               
             }
 
         });
@@ -237,8 +255,17 @@ public class TimerUI extends Application {
                 timeDate.setText("");
                 timeStarted.setText("");
                 timeStopped.setText("");
+                appLogic.logOutUser();
                 primaryStage.setScene(loginView);
             }
+        });
+        
+        history.setOnAction(action -> {
+           primaryStage.setScene(historyScene);
+        });
+        
+        back.setOnAction(action -> {
+            primaryStage.setScene(timerScene);
         });
 
     }

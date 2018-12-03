@@ -31,7 +31,7 @@ public class AppLogic {
         this.timeDao = timeDao;
         start = new Date();
         stop = new Date();
-        System.out.println("applogiikassa");
+
     }
 
     public boolean createNewUser(String firstname, String surname) {
@@ -54,8 +54,12 @@ public class AppLogic {
     }
 
     public boolean userLogin(String username) {
-        if (userDao.findByUsername(username) != null) {
+        User user = userDao.findByUsername(username);
+        
+        if (username != null) {
+            user = u;
             return true;
+            
         }
         return false;
     }
@@ -97,10 +101,9 @@ public class AppLogic {
     }
 
     public boolean createNewTime() {
-        System.out.println("metodi");
+
         Time t = new Time(u, getMonth(), getDate(), getHour(), getMinute(), getEndHour(), getEndMinute());
-        System.out.println("luotu");
-        System.out.println(t);
+
         try {
 
             timeDao.addTime(t);

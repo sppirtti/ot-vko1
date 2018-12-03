@@ -44,7 +44,7 @@ public class TimerUI extends Application {
     public void init() throws Exception {
 
         UserFileDao userDao = new UserFileDao("users.txt");
-        TimeFileDao timeDao = new TimeFileDao("times.txt");
+        TimeFileDao timeDao = new TimeFileDao("times.txt", userDao);
 
         appLogic = new AppLogic(userDao, timeDao);
 
@@ -216,13 +216,15 @@ public class TimerUI extends Application {
 
                 timeDate.setText(appLogic.getDate().toString() + "." + appLogic.getMonth().toString());
                 timeStarted.setText(appLogic.getHour().toString() + ":" + appLogic.getMinute().toString());
+                System.out.println("aika alkaa");
 
             } else {
 
                 timerButton.setText("Start Timer");
                 timeStopped.setText(appLogic.getEndHour().toString() + ":" + appLogic.getEndMinute().toString());
-
                 appLogic.createNewTime();
+
+                System.out.println("valmis");
             }
 
         });

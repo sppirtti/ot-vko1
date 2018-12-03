@@ -25,13 +25,13 @@ public class AppLogic {
     private TimeDao timeDao;
     private Date start;
     private Date stop;
-    
 
     public AppLogic(UserDao userDao, TimeDao timeDao) {
         this.userDao = userDao;
         this.timeDao = timeDao;
         start = new Date();
         stop = new Date();
+        System.out.println("applogiikassa");
     }
 
     public boolean createNewUser(String firstname, String surname) {
@@ -43,7 +43,6 @@ public class AppLogic {
         }
 
         try {
-            
 
             userDao.createUser(u);
 
@@ -51,7 +50,6 @@ public class AppLogic {
             return false;
         }
 
-        
         return true;
     }
 
@@ -80,40 +78,50 @@ public class AppLogic {
 
         return start.getDate();
     }
+
     public Integer getEndHour() {
         stop = new Date();
         return stop.getHours();
     }
+
     public Integer getEndMinute() {
         return stop.getMinutes();
     }
-    
+
+    public void logOutUser() {
+        u = null;
+    }
+
+    public User getLoggedUser() {
+        return u;
+    }
+
     public boolean createNewTime() {
-        
-        Time t = new Time(u.getUsername(),getMonth(),getDate(),getHour(), getMinute(), getEndHour(), getEndMinute());
-        
+        System.out.println("metodi");
+        Time t = new Time(u, getMonth(), getDate(), getHour(), getMinute(), getEndHour(), getEndMinute());
+        System.out.println("luotu");
+        System.out.println(t);
         try {
+
             timeDao.addTime(t);
+
         } catch (Exception e) {
             return false;
         }
         return true;
     }
-    
+
     public List<Time> getTimes() {
-        
+
         if (u == null) {
             return new ArrayList<>();
         }
-        
+
         return timeDao.getAll()
                 .stream()
-                .filter(t -> t.getUsername().equals(u.getUsername()))
+                .filter(t -> t.getUser().equals(u))
                 .collect(Collectors.toList());
-        
+
     }
-    
-    
-    
 
 }

@@ -74,4 +74,8 @@ public class UserFileDao implements UserDao {
         return user;
     }
     
+    public List<User> getAll() {
+        return users;
+    }
+    
 }

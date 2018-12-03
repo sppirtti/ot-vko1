@@ -12,6 +12,7 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
 import wt.domain.Time;
+import wt.domain.User;
 
 /**
  *
@@ -22,15 +23,17 @@ public class TimeFileDao implements TimeDao {
     public List<Time> times;
     private String filename;
 
-    public TimeFileDao(String filename) throws Exception {
+    public TimeFileDao(String filename, UserFileDao users) throws Exception {
 
         this.filename = filename;
         times = new ArrayList<>();
         try {
             Scanner scanner = new Scanner(new File(filename));
-            while (scanner.hasNext()) {
+            while (scanner.hasNextLine()) {
                 String[] split = scanner.nextLine().split(";");
-                Time newTime = new Time(split[0], Integer.parseInt(split[1]), Integer.parseInt(split[2]), Integer.parseInt(split[3]),
+                User u = users.getAll().stream().filter(e -> e.getUsername().equals(split[0])).findFirst().orElse(null);
+                
+                Time newTime = new Time(u, Integer.parseInt(split[1]), Integer.parseInt(split[2]), Integer.parseInt(split[3]),
                         Integer.parseInt(split[4]), Integer.parseInt(split[5]), Integer.parseInt(split[6]));
 
                 times.add(newTime);
@@ -48,7 +51,7 @@ public class TimeFileDao implements TimeDao {
         try (FileWriter fw = new FileWriter(new File(filename))) {
             for (Time t : times) {
                 fw.write(
-                        t.getUsername() + ";" + t.getMonth() + ";"
+                        t.getUser() + ";" + t.getMonth() + ";"
                         + t.getDay() + ";" + t.getStartHour() + ";"
                         + t.getStartMinute() + ";" + t.getEndHour() + ";"
                         + t.getEndMinute() + "\n");

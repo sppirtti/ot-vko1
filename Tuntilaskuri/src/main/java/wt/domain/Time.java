@@ -19,7 +19,7 @@ public class Time {
     private int endHour;
     private int endMinute;
 
-    public Time(String username, int month, int day, int startHour, int startMinute, int endHour, int endMinute) {
+    public Time(String username, Integer month, Integer day, Integer startHour, Integer startMinute, Integer endHour, Integer endMinute) {
         this.username = username;
         this.month = month;
         this.day = day;

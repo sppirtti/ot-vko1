@@ -12,10 +12,9 @@ package wt.dao;
 import wt.domain.User;
 
 public interface UserDao {
-    
-  User createUser(User user) throws Exception;
-  
-  User findByUsername(String username);
-  
-    
+
+    User createUser(User user) throws Exception;
+
+    User findByUsername(String username);
+
 }

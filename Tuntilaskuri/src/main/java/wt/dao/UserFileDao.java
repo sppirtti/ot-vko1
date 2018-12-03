@@ -24,18 +24,18 @@ public class UserFileDao implements UserDao {
     public UserFileDao(String filename) throws Exception {
         this.filename = filename;
         users = new ArrayList<>();
-        System.out.println("uusi dao");
+        
         
         try {
             
             Scanner scanner = new Scanner(new File(filename));
-            System.out.println("luetaan lista");
+            
             while (scanner.hasNextLine()) {
                 
                 String[] split = scanner.nextLine().split(";");
                 User newUser = new User(split[0], split[1], split[2]);
                 users.add(newUser);
-                System.out.println("1");
+                
                 
             }
         } catch (Exception e) {

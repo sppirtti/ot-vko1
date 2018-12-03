@@ -211,8 +211,6 @@ public class TimerUI extends Application {
 
         timerButton.setOnAction(action -> {
 
-            
-
             if (timerButton.getText().equals("Start Timer")) {
                 timerButton.setText("Stop Timer");
 
@@ -231,7 +229,7 @@ public class TimerUI extends Application {
         logOutButton.setOnAction(action -> {
             if (timerButton.getText().equals("Stop Timer")) {
                 timerLabel.setText("Stop timer before logging out!");
-                
+
             } else {
                 timeDate.setText("");
                 timeStarted.setText("");

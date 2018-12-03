@@ -40,7 +40,7 @@ public class AppLogic {
         }
 
         try {
-            System.out.println("lähdetään daoon");
+            
 
             userDao.createUser(u);
 
@@ -48,7 +48,7 @@ public class AppLogic {
             return false;
         }
 
-        System.out.println("palataan daosta");
+        
         return true;
     }
 
@@ -83,6 +83,18 @@ public class AppLogic {
     }
     public Integer getEndMinute() {
         return stop.getMinutes();
+    }
+    
+    public boolean createNewTime(String username, int month, int day, int startHour, int startMinute, int endHour, int endMinute) {
+        
+        Time t = new Time(u.getUsername(),getMonth(),getDate(),getHour(), getMinute(), getEndHour(), getEndMinute());
+        
+        try {
+            timeDao.add(t);
+        } catch (Exception e) {
+            return false;
+        }
+        return true;
     }
     
     

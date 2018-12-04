@@ -15,4 +15,11 @@
                 <goal>checkstyle:checkstyle</goal>
             </goals>
         </action>
+        <action>
+            <actionName>CUSTOM-jarluonti</actionName>
+            <displayName>jarluonti</displayName>
+            <goals>
+                <goal>package</goal>
+            </goals>
+        </action>
     </actions>

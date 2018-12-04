@@ -57,9 +57,4 @@ public class Time {
         return this.endMinute;
     }
 
-    public String toString() {
-
-        return this.month.toString() + this.day.toString() + this.startMinute.toString() + this.endHour.toString() + this.endMinute.toString();
-    }
-
 }

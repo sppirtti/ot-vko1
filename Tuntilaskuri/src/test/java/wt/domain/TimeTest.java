@@ -29,12 +29,12 @@ public class TimeTest {
     
     @Test
     public void TimeGettersWork() {
-        assertEquals(12, time.getMonth());
-        assertEquals(1, time.getDay());
-        assertEquals(12, time.getStartHour());
-        assertEquals(30, time.getStartMinute());
-        assertEquals(16, time.getEndHour());
-        assertEquals(40, time.getEndMinute());
+        assertEquals("12", time.getMonth());
+        assertEquals("1", time.getDay());
+        assertEquals("12", time.getStartHour());
+        assertEquals("30", time.getStartMinute());
+        assertEquals("16", time.getEndHour());
+        assertEquals("40", time.getEndMinute());
                 
     }
     

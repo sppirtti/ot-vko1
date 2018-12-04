@@ -11,5 +11,6 @@
 |28.11 | 1 | Aika luokkia aloitettu |
 |3.12 | 6 | Aika ja päivämääränäkyvyys, aikatallennusta |
 |4.12 | 3 | aikatallennusta, testejä|
+|4.12 | 2 | checkstyle, testikattavuus, jar |
 
-|YHTEENSÄ|25| Tuntia |
+|YHTEENSÄ|30| Tuntia |

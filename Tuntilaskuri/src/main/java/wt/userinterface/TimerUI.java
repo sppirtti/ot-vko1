@@ -48,11 +48,13 @@ public class TimerUI extends Application {
         TimeFileDao timeDao = new TimeFileDao("times.txt", userDao);
 
         appLogic = new AppLogic(userDao, timeDao);
+        appLogic.logOutUser();
 
     }
 
     @Override
     public void start(Stage primaryStage) throws Exception {
+        
 
         //Login screen
         //Create needed objects

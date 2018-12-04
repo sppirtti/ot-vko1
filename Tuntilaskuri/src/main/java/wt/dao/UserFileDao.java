@@ -17,65 +17,63 @@ import java.util.Scanner;
  * @author Samuli
  */
 public class UserFileDao implements UserDao {
-    
+
     List<User> users;
     String filename;
-    
+
     public UserFileDao(String filename) throws Exception {
         this.filename = filename;
         users = new ArrayList<>();
-        
-        
+
         try {
-            
+
             Scanner scanner = new Scanner(new File(filename));
-            
+
             while (scanner.hasNextLine()) {
-                
+
                 String[] split = scanner.nextLine().split(";");
                 User newUser = new User(split[0], split[1], split[2]);
                 users.add(newUser);
-                
-                
+
             }
         } catch (Exception e) {
             FileWriter fw = new FileWriter(new File(filename));
             fw.close();
         }
     }
-    
+
     private void save() throws Exception {
-        
+
         try (FileWriter fw = new FileWriter(new File(filename))) {
             for (User u : users) {
                 fw.write(u.getFirstname() + ";" + u.getSurname() + ";" + u.getUsername() + "\n");
             }
         }
     }
-    
+
     @Override
     public User findByUsername(String username
     ) {
-        
+
         return users.stream()
                 .filter(u -> u.getUsername()
                 .equals(username))
                 .findFirst()
                 .orElse(null);
-        
+
     }
-    
+
     @Override
     public User createUser(User user) throws Exception {
-        
+
         users.add(user);
-        
+
         save();
         return user;
     }
-    
+
     public List<User> getAll() {
         return users;
     }
-    
+
 }

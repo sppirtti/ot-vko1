@@ -7,7 +7,6 @@ package wt.dao;
 
 import java.io.File;
 import java.io.FileWriter;
-import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
@@ -31,9 +30,9 @@ public class TimeFileDao implements TimeDao {
             Scanner scanner = new Scanner(new File(filename));
             while (scanner.hasNextLine()) {
                 String[] split = scanner.nextLine().split(";");
-                
+
                 User u = users.getAll().stream().filter(e -> e.getUsername().equals(split[0])).findFirst().orElse(null);
-                
+
                 Time newTime = new Time(u, Integer.parseInt(split[1]), Integer.parseInt(split[2]), Integer.parseInt(split[3]),
                         Integer.parseInt(split[4]), Integer.parseInt(split[5]), Integer.parseInt(split[6]));
 
@@ -51,7 +50,7 @@ public class TimeFileDao implements TimeDao {
     public void save() throws Exception {
         try (FileWriter fw = new FileWriter(new File(filename))) {
             for (Time t : times) {
-               
+
                 fw.write(
                         t.getUser() + ";" + t.getMonth() + ";"
                         + t.getDay() + ";" + t.getStartHour() + ";"
@@ -73,6 +72,7 @@ public class TimeFileDao implements TimeDao {
 
     @Override
     public List<Time> getAll() {
+
         return times;
     }
 

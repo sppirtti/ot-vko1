@@ -12,12 +12,12 @@ package wt.domain;
 public class Time {
 
     private User user;
-    private int month;
-    private int day;
-    private int startHour;
-    private int startMinute;
-    private int endHour;
-    private int endMinute;
+    private Integer month;
+    private Integer day;
+    private Integer startHour;
+    private Integer startMinute;
+    private Integer endHour;
+    private Integer endMinute;
 
     public Time(User user, Integer month, Integer day, Integer startHour, Integer startMinute, Integer endHour, Integer endMinute) {
         this.user = user;
@@ -33,28 +33,33 @@ public class Time {
         return user;
     }
 
-    public int getMonth() {
+    public Integer getMonth() {
         return this.month;
     }
 
-    public int getDay() {
+    public Integer getDay() {
         return this.day;
     }
 
-    public int getStartHour() {
+    public Integer getStartHour() {
         return this.startHour;
     }
 
-    public int getStartMinute() {
+    public Integer getStartMinute() {
         return this.startMinute;
     }
 
-    public int getEndHour() {
+    public Integer getEndHour() {
         return this.endHour;
     }
 
-    public int getEndMinute() {
+    public Integer getEndMinute() {
         return this.endMinute;
+    }
+
+    public String toString() {
+
+        return this.month.toString() + this.day.toString() + this.startMinute.toString() + this.endHour.toString() + this.endMinute.toString();
     }
 
 }

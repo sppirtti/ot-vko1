@@ -1,10 +1,8 @@
 package wt.domain;
 
 import java.util.ArrayList;
-import java.util.Calendar;
 import java.util.Date;
 import java.util.List;
-import java.util.Locale;
 import java.util.stream.Collectors;
 import wt.dao.TimeDao;
 import wt.dao.UserDao;
@@ -22,7 +20,7 @@ public class AppLogic {
 
     private User u;
     private UserDao userDao;
-    private TimeDao timeDao;
+    public TimeDao timeDao;
     private Date start;
     private Date stop;
 

@@ -5,14 +5,14 @@
  */
 package wt.userinterface;
 
-import java.util.Calendar;
+import java.util.List;
 import wt.dao.UserFileDao;
 import wt.domain.AppLogic;
 
 import javafx.application.Application;
 import javafx.geometry.Insets;
+import javafx.scene.Node;
 import javafx.scene.Scene;
-import javafx.scene.control.Alert;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
@@ -22,6 +22,7 @@ import javafx.scene.layout.VBox;
 import javafx.scene.text.Font;
 import javafx.stage.Stage;
 import wt.dao.TimeFileDao;
+import wt.domain.Time;
 
 /**
  *
@@ -162,7 +163,7 @@ public class TimerUI extends Application {
         Scene timerScene = new Scene(timerLayout);
 
         //TIME HISTORY SCREEN
-        Label historyLabel = new Label("");
+        Label historyLabel = new Label("Month" + "    " + "Date" + "    " + "Start Time (HH/MM)" + "     " + "End time (HH/MM)" + "    " + "Time Worked (HH/MM)");
         Button back = new Button("Back");
         VBox historyBox = new VBox();
 
@@ -238,7 +239,7 @@ public class TimerUI extends Application {
 
                 timerButton.setText("Start Timer");
                 appLogic.createNewTime();
-                
+
                 timeStopped.setText(appLogic.getEndHour().toString() + ":" + appLogic.getEndMinute().toString());
 
             }
@@ -259,6 +260,7 @@ public class TimerUI extends Application {
         });
 
         history.setOnAction(action -> {
+            
             primaryStage.setScene(historyScene);
         });
 

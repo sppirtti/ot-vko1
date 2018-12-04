@@ -55,13 +55,15 @@ public class AppLogic {
 
     public boolean userLogin(String username) {
         User user = userDao.findByUsername(username);
-        
+
         if (username != null) {
-            user = u;
+            u = user;
             return true;
-            
+
+        } else {
+
+            return false;
         }
-        return false;
     }
 
     public Integer getMinute() {

@@ -28,13 +28,18 @@ public class TimeTest {
     }
     
     @Test
+    public void UserIsCorrect() {
+        assertEquals("mtep", time.getUser().getUsername());
+    }
+    
+    @Test
     public void TimeGettersWork() {
-        assertEquals("12", time.getMonth());
-        assertEquals("1", time.getDay());
-        assertEquals("12", time.getStartHour());
-        assertEquals("30", time.getStartMinute());
-        assertEquals("16", time.getEndHour());
-        assertEquals("40", time.getEndMinute());
+        assertEquals("12", time.getMonth().toString());
+        assertEquals("1", time.getDay().toString());
+        assertEquals("12", time.getStartHour().toString());
+        assertEquals("30", time.getStartMinute().toString());
+        assertEquals("16", time.getEndHour().toString());
+        assertEquals("40", time.getEndMinute().toString());
                 
     }
     

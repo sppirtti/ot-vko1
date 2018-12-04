@@ -10,5 +10,6 @@
 |27.11 | 3 | testejä, checkstyle, sovelluksen toimintaa|
 |28.11 | 1 | Aika luokkia aloitettu |
 |3.12 | 6 | Aika ja päivämääränäkyvyys, aikatallennusta |
+|4.12 | 3 | aikatallennusta, testejä|
 
 |YHTEENSÄ|25| Tuntia |

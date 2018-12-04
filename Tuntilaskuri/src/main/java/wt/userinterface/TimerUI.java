@@ -260,7 +260,7 @@ public class TimerUI extends Application {
         });
 
         history.setOnAction(action -> {
-            
+
             primaryStage.setScene(historyScene);
         });
 

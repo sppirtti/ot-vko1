@@ -49,15 +49,16 @@ public class TimeFileDaoTest {
         appLogic = new AppLogic(udao, dao);
 
     }
+
     @Test
     public void NoListWhenLoggedOut() {
         appLogic.logOutUser();
-        
-        List <Time> times = appLogic.getTimes();
+
+        List<Time> times = appLogic.getTimes();
         assertEquals(0, times.size());
-        
+
     }
-    
+
     @Test
     public void addTime() {
         appLogic.createNewTime();

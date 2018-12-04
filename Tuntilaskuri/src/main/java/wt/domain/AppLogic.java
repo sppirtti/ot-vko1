@@ -55,13 +55,14 @@ public class AppLogic {
         User user = userDao.findByUsername(username);
 
         if (username != null) {
+            
             u = user;
             return true;
 
-        } else {
-
-            return false;
         }
+
+        return false;
+
     }
 
     public Integer getMinute() {
@@ -126,6 +127,5 @@ public class AppLogic {
                 .collect(Collectors.toList());
 
     }
-
 
 }

@@ -52,8 +52,7 @@ public class UserFileDao implements UserDao {
     }
 
     @Override
-    public User findByUsername(String username
-    ) {
+    public User findByUsername(String username) {
 
         return users.stream()
                 .filter(u -> u.getUsername()

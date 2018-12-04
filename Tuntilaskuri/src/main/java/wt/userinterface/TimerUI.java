@@ -39,6 +39,7 @@ public class TimerUI extends Application {
         // TODO code application logic here
 
         launch(args);
+
     }
 
     @Override
@@ -215,11 +216,10 @@ public class TimerUI extends Application {
         });
 
         loginbutton.setOnAction(action -> {
-
+           
             if (appLogic.userLogin(loginfield.getText())) {
 
                 primaryStage.setScene(timerScene);
-                System.out.println(appLogic.getLoggedUser());
 
             } else {
                 loginMessage.setText("User doesn't exist!");

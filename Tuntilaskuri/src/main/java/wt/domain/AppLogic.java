@@ -54,7 +54,7 @@ public class AppLogic {
     public boolean userLogin(String username) {
         User user = userDao.findByUsername(username);
 
-        if (username != null) {
+        if (userDao.findByUsername(username) != null) {
             u = user;
             return true;
 
@@ -63,6 +63,7 @@ public class AppLogic {
             return false;
         }
     }
+    
 
     public Integer getMinute() {
         return start.getMinutes();
@@ -74,6 +75,7 @@ public class AppLogic {
     }
 
     public Integer getMonth() {
+        start = new Date();
 
         return start.getMonth();
     }

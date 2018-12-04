@@ -233,7 +233,7 @@ public class TimerUI extends Application {
 
             if (timerButton.getText().equals("Start Timer")) {
                 timerButton.setText("Stop Timer");
-
+                
                 timeDate.setText(appLogic.getDate().toString() + "." + appLogic.getMonth().toString());
                 timeStarted.setText(appLogic.getHour().toString() + ":" + appLogic.getMinute().toString());
 

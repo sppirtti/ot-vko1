@@ -168,29 +168,29 @@ public class AppLogic {
     public String timeWorked(int startH, int startM, int endH, int endM) {
         Integer hoursWorked = 0;
         Integer minutesWorked = 0;
-
-        Integer startHo = startHour;
-        Integer startMi = startMinute;
-        Integer endHo = endH;
-        Integer endMi = endM;
+        startHour = startH;
+        startMinute = startM;
+        endHour = endH;
+        endMinute = endM;
         
-        System.out.println(startHo);
-        System.out.println(startMi);
-        System.out.println(endHo);
-        System.out.println(endMi);
+        System.out.println(endM);
+        System.out.println(startM);
+        System.out.println(startMinute);
+        System.out.println(endMinute);
+        
 
-        if (endHo < startHo) {
-            hoursWorked = endHo + 24 - startHo;
+        if (endHour < startHour) {
+            hoursWorked = endHour + 24 - startHour;
         } else {
-            hoursWorked = endHo - startHo;
+            hoursWorked = endHour - startHour;
 
         }
 
-        if (endMi < startMi) {
+        if (endMinute < startMinute) {
             hoursWorked = hoursWorked - 1;
-            minutesWorked = endMi + 60 - startMi;
+            minutesWorked = endMinute + 60 - startMinute;
         } else {
-            minutesWorked = endMi - startMi;
+            minutesWorked = endMinute - startMinute;
         }
 
         if (minutesWorked < 10) {

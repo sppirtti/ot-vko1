@@ -4,6 +4,8 @@
             <actionName>CUSTOM-testikattavuus</actionName>
             <displayName>testikattavuus</displayName>
             <goals>
+                <goal>clean</goal>
+                <goal>test</goal>
                 <goal>jacoco:report</goal>
             </goals>
         </action>
@@ -27,6 +29,13 @@
             <displayName>javadoc</displayName>
             <goals>
                 <goal>javadoc:javadoc</goal>
+            </goals>
+        </action>
+        <action>
+            <actionName>CUSTOM-clean</actionName>
+            <displayName>clean</displayName>
+            <goals>
+                <goal>clean:clean</goal>
             </goals>
         </action>
     </actions>

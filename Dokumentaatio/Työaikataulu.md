@@ -13,5 +13,6 @@
 |4.12 | 3 | aikatallennusta, testejä|
 |4.12 | 2 | checkstyle, testikattavuus, jar |
 |9.12| 3 | ei edistystä, havaittu bugi tallennuksessa |
+|11.12 | 2 | bugfix aikatallennukseen, laskee työskennellyn ajan |
 
 |YHTEENSÄ|33| Tuntia |

@@ -1,10 +1,12 @@
-/**
- * Aika-luokka joka käsittää Time oliot ja jonka avulla niitähin liittyvää tietoa voidaan hakea.
- * 
- * Aikaluokka käyttää User luokan usernamea sisältääkseen tietyn ajan aina tiettyä User-oliota kohden.
- */
 package wt.domain;
 
+/**
+ * Aika-luokka joka käsittää Time oliot ja jonka avulla niitähin liittyvää
+ * tietoa voidaan hakea.
+ *
+ * Aikaluokka käyttää User luokan usernamea sisältääkseen tietyn ajan aina
+ * tiettyä User-oliota kohden.
+ */
 public class Time {
 
     private String user;

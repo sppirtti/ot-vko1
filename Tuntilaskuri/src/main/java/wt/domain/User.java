@@ -1,11 +1,11 @@
-/**
- * Sisältää User-olion. User olion voi luoda antamalla etunimen ja sukunimen.
- * 
- * Olio osaa generoida itse käyttäjänimen jota käytetään sisäänkirjatumiseen sovellukseen.
- */
-
 package wt.domain;
 
+/**
+ * Sisältää User-olion. User olion voi luoda antamalla etunimen ja sukunimen.
+ *
+ * Olio osaa generoida itse käyttäjänimen jota käytetään sisäänkirjatumiseen
+ * sovellukseen.
+ */
 public class User {
 
     private String firstname;
@@ -18,7 +18,7 @@ public class User {
         setUsername();
 
     }
-    
+
     public User(String firstname, String surname, String username) {
         this.firstname = firstname;
         this.surname = surname;

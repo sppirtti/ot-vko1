@@ -1,10 +1,9 @@
 /**
  * Sovelluslogiikasta vastaava luokka.
  * Sovelluslogiikka vastaa tiedon siirtämisestä tiedostojen ja käyttöliittymän välillä.
- * 
+ *
  * Sisältää myös aikaan liittyviä ominaisuuksia.
  */
-
 package wt.domain;
 
 import java.util.ArrayList;
@@ -13,7 +12,6 @@ import java.util.List;
 import java.util.stream.Collectors;
 import wt.dao.TimeDao;
 import wt.dao.UserDao;
-
 
 public class AppLogic {
 
@@ -66,6 +64,11 @@ public class AppLogic {
         }
     }
 
+    /**
+     * Käynnistää ajastimen päivittämällä Date olion ja ottamalla sen arvot
+     * talteen
+     *
+     */
     public void startTimer() {
         refreshSystemDate();
         getMonth();
@@ -75,6 +78,9 @@ public class AppLogic {
 
     }
 
+    /**
+     * Pysäyttää ajasten ja ottaa sen Date olion arvot talteen.
+     */
     public void stopTimer() {
         refreshSystemDate();
         getEndHour();

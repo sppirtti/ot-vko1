@@ -83,4 +83,17 @@ public class AppLogicTest {
 
     }
 
+    @Test
+    public void timeCreationWork() {
+
+        appLogic.refreshSystemDate();
+        Time t = new Time("kissa", appLogic.getMonth(), appLogic.getDate(), appLogic.getHour(),
+                appLogic.getMinute(), appLogic.getEndHour(), appLogic.getEndMinute());
+
+        Integer date = new Date().getDate();
+        
+        assertEquals(t.getDay(), date);
+        
+    }
+
 }

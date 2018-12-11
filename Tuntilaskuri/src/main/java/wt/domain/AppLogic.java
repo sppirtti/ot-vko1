@@ -22,12 +22,13 @@ public class AppLogic {
     private UserDao userDao;
     public TimeDao timeDao;
     private Date systemDate;
-    private int Month;
-    private int Date;
+    private int month;
+    private int date;
     private int startHour;
     private int startMinute;
     private int endHour;
     private int endMinute;
+    
 
     public AppLogic(UserDao userDao, TimeDao timeDao) {
         this.userDao = userDao;
@@ -73,6 +74,7 @@ public class AppLogic {
         getDate();
         getMinute();
         getHour();
+        
     }
 
     public void stopTimer() {
@@ -102,15 +104,15 @@ public class AppLogic {
 
     public Integer getMonth() {
 
-        Month = systemDate.getMonth() + 1;
+        month = systemDate.getMonth() + 1;
 
-        return Month;
+        return month;
     }
 
     public Integer getDate() {
 
-        Date = systemDate.getDate();
-        return Date;
+        date = systemDate.getDate();
+        return date;
     }
 
     public Integer getEndHour() {
@@ -137,7 +139,8 @@ public class AppLogic {
 
     public boolean createNewTime() {
 
-        Time t = new Time(u.getUsername(), Month, Date, startHour, startMinute, endHour, endMinute);
+        Time t = new Time(u.getUsername(), month, date, startHour, startMinute, endHour, endMinute);
+        
 
         try {
 
@@ -162,21 +165,32 @@ public class AppLogic {
 
     }
 
-    public String timeWorked() {
+    public String timeWorked(int startH, int startM, int endH, int endM) {
         Integer hoursWorked = 0;
         Integer minutesWorked = 0;
 
-        if (endHour < startHour) {
-            hoursWorked = endHour + 24 - startHour;
+        Integer startHo = startHour;
+        Integer startMi = startMinute;
+        Integer endHo = endH;
+        Integer endMi = endM;
+        
+        System.out.println(startHo);
+        System.out.println(startMi);
+        System.out.println(endHo);
+        System.out.println(endMi);
+
+        if (endHo < startHo) {
+            hoursWorked = endHo + 24 - startHo;
         } else {
-            hoursWorked = endHour - startHour;
+            hoursWorked = endHo - startHo;
 
         }
 
-        if (endMinute < startMinute) {
-            minutesWorked = endMinute + 60 - startMinute;
+        if (endMi < startMi) {
+            hoursWorked = hoursWorked - 1;
+            minutesWorked = endMi + 60 - startMi;
         } else {
-            minutesWorked = endMinute - startMinute;
+            minutesWorked = endMi - startMi;
         }
 
         if (minutesWorked < 10) {

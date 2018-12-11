@@ -1,11 +1,3 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
-
- */
-
-/*
 package wt.dao;
 
 import java.io.File;
@@ -13,13 +5,13 @@ import java.io.FileWriter;
 import java.util.ArrayList;
 import java.util.List;
 import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertTrue;
 import org.junit.Before;
 import org.junit.Rule;
 import org.junit.Test;
 import org.junit.rules.TemporaryFolder;
 import wt.domain.AppLogic;
 import wt.domain.Time;
-
 
 public class TimeFileDaoTest {
 
@@ -58,11 +50,13 @@ public class TimeFileDaoTest {
         assertEquals(0, times.size());
 
     }
-
+    
     @Test
-    public void addTime() {
-        appLogic.createNewTime();
+    public void AddingNewTimesWorks() throws Exception {
+        Time t = new Time ("spir", 10,10,10,10,11,10);
+        dao.addTime(t);
+        
+        assertTrue(dao.getAll().size() > 0);
     }
 
 }
-*/

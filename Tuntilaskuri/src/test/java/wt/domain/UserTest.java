@@ -3,6 +3,7 @@ package wt.domain;
 
 import wt.domain.User;
 import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertFalse;
 import org.junit.Test;
 
 
@@ -30,6 +31,15 @@ public class UserTest {
         User user = new User ("Li", "Ha");
         
         assertEquals("LHa", user.getUsername());
+    }
+    
+    @Test
+    public void ChecksUniqueUserName() {
+        User u1 = new User("matti", "teppo");
+        
+        Object o = new Object();
+        
+        assertFalse(u1.equals(o));
     }
     
     

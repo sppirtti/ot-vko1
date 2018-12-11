@@ -137,7 +137,7 @@ public class TimerUI extends Application {
         Label date = new Label("Date(DD/MM): ");
         Label started = new Label("Time Started(HH/MM): ");
         Label stopped = new Label("Time Stopped(HH/MM): ");
-        Label worked = new Label ("Time Worked(HH/MM) : ");
+        Label worked = new Label("Time Worked(HH/MM) : ");
         Label timerLabel = new Label("");
 
         Button history = new Button("Show History");
@@ -146,7 +146,6 @@ public class TimerUI extends Application {
         HBox startBox = new HBox();
         HBox stopBox = new HBox();
         HBox workedBox = new HBox();
-        
 
         dateBox.setSpacing(20);
         startBox.setSpacing(20);
@@ -241,16 +240,39 @@ public class TimerUI extends Application {
 
                 timeDate.setText(appLogic.getDate().toString() + "." + appLogic.getMonth().toString());
 
-                timeStarted.setText(appLogic.getHour().toString() + ":" + appLogic.getMinute().toString());
+                if (appLogic.getHour() < 10 && appLogic.getMinute() < 10) {
+                    timeStarted.setText("0" + appLogic.getHour().toString() + ":" + "0" + appLogic.getMinute().toString());
+                }
+                if (appLogic.getHour() < 10 && appLogic.getMinute() > 10) {
+                    timeStarted.setText("0" + appLogic.getHour().toString() + ":" + appLogic.getMinute().toString());
+                }
+                if (appLogic.getHour() > 10 && appLogic.getMinute() < 10) {
+                    timeStarted.setText(appLogic.getHour().toString() + ":" + "0" + appLogic.getMinute().toString());
+                } else {
+                    timeStarted.setText(appLogic.getHour().toString() + ":" + appLogic.getMinute().toString());
+                }
 
             } else {
+                
                 appLogic.stopTimer();
+
+                System.out.println(appLogic.getEndHour());
+                System.out.println(appLogic.getEndMinute());
                 appLogic.createNewTime();
-                timeWorked.setText(appLogic.timeWorked());
+                timeWorked.setText(appLogic.timeWorked(appLogic.getHour(), appLogic.getMinute(), appLogic.getEndHour(), appLogic.getEndMinute()));
                 timerButton.setText("Start Timer");
 
-                timeStopped.setText(appLogic.getEndHour().toString() + ":" + appLogic.getEndMinute().toString());
-
+                if (appLogic.getEndHour() < 10 && appLogic.getEndMinute() < 10) {
+                    timeStopped.setText("0" + appLogic.getEndHour().toString() + ":" + "0" + appLogic.getEndMinute().toString());
+                }
+                if (appLogic.getEndHour() < 10 && appLogic.getEndMinute() > 10) {
+                    timeStopped.setText("0" + appLogic.getEndHour().toString() + ":" + appLogic.getEndMinute().toString());
+                }
+                if (appLogic.getEndHour() > 10 && appLogic.getEndMinute() < 10) {
+                    timeStopped.setText(appLogic.getEndHour().toString() + ":" + "0" + appLogic.getEndMinute().toString());
+                } else {
+                    timeStopped.setText(appLogic.getEndHour().toString() + ":" + appLogic.getEndMinute().toString());
+                }
             }
 
         });

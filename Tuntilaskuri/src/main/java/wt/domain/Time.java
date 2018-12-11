@@ -1,14 +1,10 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
+/**
+ * Aika-luokka joka käsittää Time oliot ja jonka avulla niitähin liittyvää tietoa voidaan hakea.
+ * 
+ * Aikaluokka käyttää User luokan usernamea sisältääkseen tietyn ajan aina tiettyä User-oliota kohden.
  */
 package wt.domain;
 
-/**
- *
- * @author Samuli
- */
 public class Time {
 
     private String user;
@@ -50,7 +46,7 @@ public class Time {
     }
 
     public Integer getEndHour() {
-        
+
         return this.endHour;
     }
 

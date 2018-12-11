@@ -1,14 +1,11 @@
+/**
+ * Sisältää User-olion. User olion voi luoda antamalla etunimen ja sukunimen.
+ * 
+ * Olio osaa generoida itse käyttäjänimen jota käytetään sisäänkirjatumiseen sovellukseen.
+ */
+
 package wt.domain;
 
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
-/**
- *
- * @author Samuli
- */
 public class User {
 
     private String firstname;

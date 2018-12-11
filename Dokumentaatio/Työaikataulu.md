@@ -12,5 +12,6 @@
 |3.12 | 6 | Aika ja päivämääränäkyvyys, aikatallennusta |
 |4.12 | 3 | aikatallennusta, testejä|
 |4.12 | 2 | checkstyle, testikattavuus, jar |
+|9.12| 3 | ei edistystä, havaittu bugi tallennuksessa |
 
-|YHTEENSÄ|30| Tuntia |
+|YHTEENSÄ|33| Tuntia |

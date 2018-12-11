@@ -1,3 +1,4 @@
 samuli;pirtti;spir
 jussi;virtane;jvir
 testi;teppo;ttep
+elli;kiiski;ekii

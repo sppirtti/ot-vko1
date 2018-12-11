@@ -7,6 +7,8 @@ package wt.dao;
 
 import java.io.File;
 import java.io.FileWriter;
+import java.util.ArrayList;
+import java.util.List;
 import static org.junit.Assert.assertEquals;
 import org.junit.Before;
 import org.junit.Rule;
@@ -25,6 +27,7 @@ public class UserFileDaoTest {
 
     File userFile;
     UserDao dao;
+    List<User> users = new ArrayList<>();
 
     @Before
     public void setUp() throws Exception {
@@ -53,5 +56,15 @@ public class UserFileDaoTest {
 
         assertEquals(null, u);
     }
+    
+    @Test
+    public void GetAllWorks() {
+        User u = new User("arttu", "kemi");
+        users.add(u);
+        
+        assertEquals(1, users.size());
+    }
+    
+    
 
 }

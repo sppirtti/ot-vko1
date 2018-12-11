@@ -253,11 +253,8 @@ public class TimerUI extends Application {
                 }
 
             } else {
-                timeWorked.setText(appLogic.timeWorked(appLogic.getHour(), appLogic.getMinute(), appLogic.getEndHour(), appLogic.getEndMinute()));
                 appLogic.stopTimer();
-
-                System.out.println(appLogic.getEndHour());
-                System.out.println(appLogic.getEndMinute());
+                timeWorked.setText(appLogic.timeWorked());
                 appLogic.createNewTime();
 
                 timerButton.setText("Start Timer");
@@ -284,6 +281,7 @@ public class TimerUI extends Application {
             } else {
                 timeDate.setText("");
                 timeStarted.setText("");
+                timeWorked.setText("");
                 timeStopped.setText("");
                 appLogic.logOutUser();
                 primaryStage.setScene(loginView);

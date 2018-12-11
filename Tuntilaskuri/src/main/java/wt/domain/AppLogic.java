@@ -28,7 +28,6 @@ public class AppLogic {
     private int startMinute;
     private int endHour;
     private int endMinute;
-    
 
     public AppLogic(UserDao userDao, TimeDao timeDao) {
         this.userDao = userDao;
@@ -74,7 +73,7 @@ public class AppLogic {
         getDate();
         getMinute();
         getHour();
-        
+
     }
 
     public void stopTimer() {
@@ -140,7 +139,6 @@ public class AppLogic {
     public boolean createNewTime() {
 
         Time t = new Time(u.getUsername(), month, date, startHour, startMinute, endHour, endMinute);
-        
 
         try {
 
@@ -165,19 +163,9 @@ public class AppLogic {
 
     }
 
-    public String timeWorked(int startH, int startM, int endH, int endM) {
+    public String timeWorked() {
         Integer hoursWorked = 0;
         Integer minutesWorked = 0;
-        startHour = startH;
-        startMinute = startM;
-        endHour = endH;
-        endMinute = endM;
-        
-        System.out.println(endM);
-        System.out.println(startM);
-        System.out.println(startMinute);
-        System.out.println(endMinute);
-        
 
         if (endHour < startHour) {
             hoursWorked = endHour + 24 - startHour;

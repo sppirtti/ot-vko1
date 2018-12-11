@@ -66,7 +66,7 @@ public class AppLogic {
             return false;
         }
     }
-    
+
     public void startTimer() {
         refreshSystemDate();
         getMonth();
@@ -74,7 +74,7 @@ public class AppLogic {
         getMinute();
         getHour();
     }
-    
+
     public void stopTimer() {
         refreshSystemDate();
         getEndHour();
@@ -102,7 +102,7 @@ public class AppLogic {
 
     public Integer getMonth() {
 
-        Month = systemDate.getMonth()+1;
+        Month = systemDate.getMonth() + 1;
 
         return Month;
     }
@@ -114,7 +114,7 @@ public class AppLogic {
     }
 
     public Integer getEndHour() {
-        
+
         endHour = systemDate.getHours();
 
         return endHour;
@@ -160,6 +160,29 @@ public class AppLogic {
                 .filter(t -> t.getUser().equals(u))
                 .collect(Collectors.toList());
 
+    }
+
+    public String timeWorked() {
+        Integer hoursWorked = 0;
+        Integer minutesWorked = 0;
+
+        if (endHour < startHour) {
+            hoursWorked = endHour + 24 - startHour;
+        } else {
+            hoursWorked = endHour - startHour;
+
+        }
+
+        if (endMinute < startMinute) {
+            minutesWorked = endMinute + 60 - startMinute;
+        } else {
+            minutesWorked = endMinute - startMinute;
+        }
+
+        if (minutesWorked < 10) {
+            return hoursWorked + ":0" + minutesWorked;
+        }
+        return hoursWorked + ":" + minutesWorked;
     }
 
 }

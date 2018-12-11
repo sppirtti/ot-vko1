@@ -132,10 +132,12 @@ public class TimerUI extends Application {
         Label timeDate = new Label("");
         Label timeStarted = new Label("");
         Label timeStopped = new Label("");
+        Label timeWorked = new Label("");
 
         Label date = new Label("Date(DD/MM): ");
         Label started = new Label("Time Started(HH/MM): ");
         Label stopped = new Label("Time Stopped(HH/MM): ");
+        Label worked = new Label ("Time Worked(HH/MM) : ");
         Label timerLabel = new Label("");
 
         Button history = new Button("Show History");
@@ -143,20 +145,24 @@ public class TimerUI extends Application {
         HBox dateBox = new HBox();
         HBox startBox = new HBox();
         HBox stopBox = new HBox();
+        HBox workedBox = new HBox();
+        
 
         dateBox.setSpacing(20);
         startBox.setSpacing(20);
         stopBox.setSpacing(20);
+        workedBox.setSpacing(20);
 
         dateBox.getChildren().addAll(date, timeDate);
         startBox.getChildren().addAll(started, timeStarted);
         stopBox.getChildren().addAll(stopped, timeStopped);
+        workedBox.getChildren().addAll(worked, timeWorked);
 
         VBox timerLayout = new VBox();
         timerLayout.setSpacing(20);
         timerLayout.setPadding(new Insets(20));
         timerLayout.setMinWidth(350);
-        timerLayout.getChildren().addAll(dateBox, startBox, stopBox, timerButton, logOutButton, timerLabel, history);
+        timerLayout.getChildren().addAll(dateBox, startBox, stopBox, workedBox, timerButton, logOutButton, timerLabel, history);
 
         Scene timerScene = new Scene(timerLayout);
 
@@ -240,6 +246,7 @@ public class TimerUI extends Application {
             } else {
                 appLogic.stopTimer();
                 appLogic.createNewTime();
+                timeWorked.setText(appLogic.timeWorked());
                 timerButton.setText("Start Timer");
 
                 timeStopped.setText(appLogic.getEndHour().toString() + ":" + appLogic.getEndMinute().toString());

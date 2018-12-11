@@ -21,14 +21,17 @@ public class AppLogic {
     private User u;
     private UserDao userDao;
     public TimeDao timeDao;
-    private Date start;
-    private Date stop;
+    private Date systemDate;
+    private int Month;
+    private int Date;
+    private int startHour;
+    private int startMinute;
+    private int endHour;
+    private int endMinute;
 
     public AppLogic(UserDao userDao, TimeDao timeDao) {
         this.userDao = userDao;
         this.timeDao = timeDao;
-        start = new Date();
-        stop = new Date();
 
     }
 
@@ -64,34 +67,64 @@ public class AppLogic {
         }
     }
     
+    public void startTimer() {
+        refreshSystemDate();
+        getMonth();
+        getDate();
+        getMinute();
+        getHour();
+    }
+    
+    public void stopTimer() {
+        refreshSystemDate();
+        getEndHour();
+        getEndMinute();
+    }
 
     public Integer getMinute() {
-        return start.getMinutes();
+
+        startMinute = systemDate.getMinutes();
+
+        return startMinute;
 
     }
 
     public Integer getHour() {
-        return start.getHours();
+
+        startHour = systemDate.getHours();
+
+        return startHour;
+    }
+
+    public void refreshSystemDate() {
+        systemDate = new Date();
     }
 
     public Integer getMonth() {
-        start = new Date();
 
-        return start.getMonth();
+        Month = systemDate.getMonth()+1;
+
+        return Month;
     }
 
     public Integer getDate() {
 
-        return start.getDate();
+        Date = systemDate.getDate();
+        return Date;
     }
 
     public Integer getEndHour() {
-        stop = new Date();
-        return stop.getHours();
+        
+        endHour = systemDate.getHours();
+
+        return endHour;
     }
 
     public Integer getEndMinute() {
-        return stop.getMinutes();
+
+        endMinute = systemDate.getMinutes();
+
+        return endMinute;
     }
 
     public void logOutUser() {
@@ -104,7 +137,7 @@ public class AppLogic {
 
     public boolean createNewTime() {
 
-        Time t = new Time(u, getMonth(), getDate(), getHour(), getMinute(), getEndHour(), getEndMinute());
+        Time t = new Time(u.getUsername(), Month, Date, startHour, startMinute, endHour, endMinute);
 
         try {
 
@@ -128,6 +161,5 @@ public class AppLogic {
                 .collect(Collectors.toList());
 
     }
-
 
 }

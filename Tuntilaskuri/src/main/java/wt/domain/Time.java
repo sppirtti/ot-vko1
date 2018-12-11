@@ -11,7 +11,7 @@ package wt.domain;
  */
 public class Time {
 
-    private User user;
+    private String user;
     private Integer month;
     private Integer day;
     private Integer startHour;
@@ -19,7 +19,7 @@ public class Time {
     private Integer endHour;
     private Integer endMinute;
 
-    public Time(User user, Integer month, Integer day, Integer startHour, Integer startMinute, Integer endHour, Integer endMinute) {
+    public Time(String user, Integer month, Integer day, Integer startHour, Integer startMinute, Integer endHour, Integer endMinute) {
         this.user = user;
         this.month = month;
         this.day = day;
@@ -29,7 +29,7 @@ public class Time {
         this.endMinute = endMinute;
     }
 
-    public User getUser() {
+    public String getUser() {
         return user;
     }
 
@@ -50,6 +50,7 @@ public class Time {
     }
 
     public Integer getEndHour() {
+        
         return this.endHour;
     }
 

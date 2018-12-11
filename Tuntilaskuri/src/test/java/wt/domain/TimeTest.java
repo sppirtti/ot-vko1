@@ -24,12 +24,12 @@ public class TimeTest {
     
     public void setUp() {
         User u = new User("matti", "teppo");
-        time = new Time(u,12,1,12,30,16,40);
+        time = new Time(u.getUsername(),12,1,12,30,16,40);
     }
     
     @Test
     public void UserIsCorrect() {
-        assertEquals("mtep", time.getUser().getUsername());
+        assertEquals("mtep", time.getUser());
     }
     
     @Test

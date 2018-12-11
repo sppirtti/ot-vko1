@@ -5,13 +5,11 @@
  */
 package wt.userinterface;
 
-import java.util.List;
 import wt.dao.UserFileDao;
 import wt.domain.AppLogic;
 
 import javafx.application.Application;
 import javafx.geometry.Insets;
-import javafx.scene.Node;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
@@ -22,7 +20,6 @@ import javafx.scene.layout.VBox;
 import javafx.scene.text.Font;
 import javafx.stage.Stage;
 import wt.dao.TimeFileDao;
-import wt.domain.Time;
 
 /**
  *
@@ -54,7 +51,6 @@ public class TimerUI extends Application {
 
     @Override
     public void start(Stage primaryStage) throws Exception {
-        
 
         //Login screen
         //Create needed objects
@@ -232,15 +228,19 @@ public class TimerUI extends Application {
         timerButton.setOnAction(action -> {
 
             if (timerButton.getText().equals("Start Timer")) {
+
+                appLogic.startTimer();
+
                 timerButton.setText("Stop Timer");
-                
+
                 timeDate.setText(appLogic.getDate().toString() + "." + appLogic.getMonth().toString());
+
                 timeStarted.setText(appLogic.getHour().toString() + ":" + appLogic.getMinute().toString());
 
             } else {
-
-                timerButton.setText("Start Timer");
+                appLogic.stopTimer();
                 appLogic.createNewTime();
+                timerButton.setText("Start Timer");
 
                 timeStopped.setText(appLogic.getEndHour().toString() + ":" + appLogic.getEndMinute().toString());
 

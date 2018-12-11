@@ -1,3 +1,1 @@
-null;11;4;16;36;16;36
-wt.domain.User@6badec3a;11;4;19;2;19;4
-wt.domain.User@6badec3a;11;4;19;2;19;4
+spir;12;11;11;14;11;15

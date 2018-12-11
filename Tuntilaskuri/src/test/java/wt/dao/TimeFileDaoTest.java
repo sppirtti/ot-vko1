@@ -2,7 +2,10 @@
  * To change this license header, choose License Headers in Project Properties.
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
+
  */
+
+/*
 package wt.dao;
 
 import java.io.File;
@@ -17,10 +20,7 @@ import org.junit.rules.TemporaryFolder;
 import wt.domain.AppLogic;
 import wt.domain.Time;
 
-/**
- *
- * @author Samuli
- */
+
 public class TimeFileDaoTest {
 
     @Rule
@@ -65,3 +65,4 @@ public class TimeFileDaoTest {
     }
 
 }
+*/

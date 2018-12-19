@@ -5,6 +5,8 @@
  */
 package wt.userinterface;
 
+import java.util.ArrayList;
+import java.util.List;
 import wt.dao.UserFileDao;
 import wt.domain.AppLogic;
 
@@ -20,6 +22,7 @@ import javafx.scene.layout.VBox;
 import javafx.scene.text.Font;
 import javafx.stage.Stage;
 import wt.dao.TimeFileDao;
+import wt.domain.Time;
 
 /**
  *
@@ -31,6 +34,7 @@ public class TimerUI extends Application {
      * @param args the command line arguments
      */
     private AppLogic appLogic;
+    private VBox timesBox;
 
     public static void main(String[] args) {
         // TODO code application logic here
@@ -46,6 +50,31 @@ public class TimerUI extends Application {
 
         appLogic = new AppLogic(userDao, timeDao);
         appLogic.logOutUser();
+
+        timesBox = new VBox();
+
+    }
+
+    public void timeList() {
+        List<Time> timeList = new ArrayList<>();
+        timeList.addAll(appLogic.getTimes());
+
+        int i = 0;
+        while (i < timeList.size()) {
+            if (i == 14) {
+                break;
+            }
+            Label tempLabel = new Label("");
+            Time tempTime = timeList.get(i);
+            String tempText = new String();
+            tempText = tempTime.getMonth().toString() + "    " + tempTime.getDay().toString() + "     " + tempTime.getStartHour()
+                    + "    " + tempTime.getStartMinute() + "    " + tempTime.getEndHour() + "    " + tempTime.getEndMinute();
+            tempLabel.setText(tempText);
+
+            timesBox.getChildren().add(tempLabel);
+            i++;
+
+        }
 
     }
 
@@ -166,15 +195,15 @@ public class TimerUI extends Application {
         Scene timerScene = new Scene(timerLayout);
 
         //TIME HISTORY SCREEN
-        Label historyLabel = new Label("Month" + "    " + "Date" + "    " + "Start Time (HH/MM)" + "     " + "End time (HH/MM)" + "    " + "Time Worked (HH/MM)");
+        Label historyLabel = new Label("Mo" + " / " + "Da" + " / " + "SH/SM" + "  " + "EH/EM" );
         Button back = new Button("Back");
         VBox historyBox = new VBox();
 
-        historyBox.setMinSize(500, 800);
+        historyBox.setMinSize(250, 300);
         historyBox.setSpacing(20);
         historyBox.setPadding(new Insets(20));
 
-        historyBox.getChildren().addAll(historyLabel, back);
+        historyBox.getChildren().addAll(back, historyLabel);
 
         Scene historyScene = new Scene(historyBox);
 
@@ -289,7 +318,8 @@ public class TimerUI extends Application {
         });
 
         history.setOnAction(action -> {
-
+            timeList();
+            historyBox.getChildren().add(timesBox);
             primaryStage.setScene(historyScene);
         });
 

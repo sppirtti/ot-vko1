@@ -163,7 +163,7 @@ public class AppLogic {
 
         return timeDao.getAll()
                 .stream()
-                .filter(t -> t.getUser().equals(u))
+                .filter(t -> t.getUser().equals(u.getUsername()))
                 .collect(Collectors.toList());
 
     }
@@ -191,5 +191,7 @@ public class AppLogic {
         }
         return hoursWorked + ":" + minutesWorked;
     }
+    
+   
 
 }

@@ -19,6 +19,7 @@ Käyttöliittymässä on neljä eri näkymää joista jokaisella on oma tehtäv�
 Jokaisella näistä on oma Scene-Olio. Scene-olioita näytetään primaryStageen sijoitettuna.
 
 Käyttöliittymä on yksinkertainen ja helppo ja nopea oppia käyttämään.
+Käyttöliittymää voit tarkastella lisää käyttöohjeesta.
 
 ## Sovelluslogiikka 
 

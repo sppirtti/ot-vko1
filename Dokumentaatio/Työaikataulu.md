@@ -17,4 +17,4 @@
 |19.12 | 4 | historianäkymä toimii, ulkoasu pelkistetty|
 |22.12 | 3 | historia viimeistely, testien viimeistely |
 
-|YHTEENSÄ|33| Tuntia |
+|YHTEENSÄ | 42 | Tuntia |

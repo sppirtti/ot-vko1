@@ -26,6 +26,12 @@ minuutit, jolloin olet käynnistänyt ajastimen.
 Painamalla Stop Timer nappulaa voi pysäyttää ajastimen. Näytölle ilmestyy tunti ja minuutit, jolloin olen 
 pysäyttänyt ajastimen.
 
-Painamalla History nappulaa, voit tarkastella aikaisempia työskentelyaikojasi. (ei vielä sovelluksessa)
+<img src="https://raw.githubusercontent.com/sppirtti/ot2018/master/Dokumentaatio/timerdone.png" width=$>
+
+Painamalla History nappulaa, voit tarkastella aikaisempia työskentelyaikojasi.
+
+<img src="https://raw.githubusercontent.com/sppirtti/ot2018/master/Dokumentaatio/history.png" width=$>
 
 Painamalla Log out nappulaa voit kirjautua ulos ja palaat takaisin kirjautumisnäkymään.
+
+<img src="https://raw.githubusercontent.com/sppirtti/ot2018/master/Dokumentaatio/timerdone.png" width=$>

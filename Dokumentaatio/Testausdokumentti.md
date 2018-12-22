@@ -15,3 +15,15 @@ Sovelluslogiikkaa on testattu on testattu AppLogicTest luokassa. Sovelluslogiika
 
 ### Dao
 Daopakettia, eli sovelluksen tallennusominaisuuksien testaus on kattava. Testit varmistavat että tallennetut oliot eivät muutu tiedostoissa ja niitä pystytään lukemaan ja käsittelemään halutusti.
+
+Daon testauksessa on hyödynnetty JUnit TemporaryFolder tilapäistiedostoja.
+
+## Järjestelmätestaus
+
+Järjestelmätestaus on tehty manuaalisesti.
+
+### Asennus ja Konfigurointi
+Sovellus on luotu, ladattu ja testattu windows ympäristössä.
+
+### Toiminnallisuus
+Suurin osa määrittelydokumentissa listatuista ominaisuuksista on testattu tai huomioitu testeissä.

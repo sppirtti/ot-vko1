@@ -7,6 +7,7 @@ package wt.domain;
 
 import java.util.Date;
 import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertTrue;
 import org.junit.Before;
 import org.junit.Test;
 import wt.dao.TestUserDao;
@@ -77,13 +78,6 @@ public class AppLogicTest {
     }
 
     @Test
-    public void TimeWorkedCorrectString() {
-
-        System.out.println(appLogic.timeWorked());
-
-    }
-
-    @Test
     public void timeCreationWork() {
 
         appLogic.refreshSystemDate();
@@ -91,9 +85,56 @@ public class AppLogicTest {
                 appLogic.getMinute(), appLogic.getEndHour(), appLogic.getEndMinute());
 
         Integer date = new Date().getDate();
-        
+
         assertEquals(t.getDay(), date);
-        
+
     }
 
+    @Test
+    public void timeWorkedForTimeTest() {
+
+        appLogic.refreshSystemDate();
+        Time t = new Time("kissa", appLogic.getMonth(), appLogic.getDate(), 12,
+                30, 13, 45);
+
+        String time = appLogic.timeWorkedForTime(t);
+
+        assertEquals("1:15", time);
+    }
+
+    @Test
+    public void timeWorkedForTimeMinutesChange() {
+
+        appLogic.refreshSystemDate();
+        Time t = new Time("kissa", appLogic.getMonth(), appLogic.getDate(), 12,
+                30, 13, 20);
+
+        String time = appLogic.timeWorkedForTime(t);
+
+        assertEquals("0:50", time);
+
+    }
+
+    @Test
+    public void startAndStopWork() {
+
+        appLogic.startTimer();
+        appLogic.stopTimer();
+
+    }
+
+    @Test
+    public void getAllTimesWorks() {
+        t = new Time("kesa", 10, 10, 12, 30, 20, 0);
+        
+    }
+    
+    @Test
+    public void timeWorkedNoTimeReturnsZeros() {
+
+        
+        String temp = appLogic.timeWorked();
+        
+        assertEquals("0:00", temp);
+    }
 }

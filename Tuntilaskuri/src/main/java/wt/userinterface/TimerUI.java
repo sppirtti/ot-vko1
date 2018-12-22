@@ -60,7 +60,7 @@ public class TimerUI extends Application {
         timeList.addAll(appLogic.getTimes());
 
         int i = 0;
-        
+
         timesBox = new VBox();
 
         if (timeList.size() > 14) {
@@ -266,7 +266,6 @@ public class TimerUI extends Application {
             if (appLogic.userLogin(loginfield.getText())) {
 
                 primaryStage.setScene(timerScene);
-                System.out.println(appLogic.getLoggedUser());
 
             } else {
                 loginMessage.setText("User doesn't exist!");
@@ -333,8 +332,7 @@ public class TimerUI extends Application {
         });
 
         history.setOnAction(action -> {
-            
-            
+
             timeList();
             historyBox.getChildren().add(timesBox);
             primaryStage.setScene(historyScene);
@@ -342,7 +340,7 @@ public class TimerUI extends Application {
 
         back.setOnAction(action -> {
             historyBox.getChildren().remove(timesBox);
-            
+
             primaryStage.setScene(timerScene);
         });
 

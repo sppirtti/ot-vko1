@@ -19,6 +19,6 @@ Sovellus on vielä kehityksessä.
 
 [Release 2](https://github.com/sppirtti/ot2018/releases/tag/viikko6)
 
-[Release 3 (Final)](https://github.com/sppirtti/ot2018/releases/tag/Loppupalautus)
+[Release 3 (Loppupalautus)](https://github.com/sppirtti/ot2018/releases/tag/Loppupalautus)
 
 

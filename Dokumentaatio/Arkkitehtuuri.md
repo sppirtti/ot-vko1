@@ -11,10 +11,10 @@ ja käyttäjä-oliot. Dao vastaa tekstitiedostotallennuksesta.
 ## Käyttöliittymä
 
 Käyttöliittymässä on neljä eri näkymää joista jokaisella on oma tehtävänsä. Nämä näkymät ovat:
-    * Uuden käyttäjän luonti
-    * Kirjautuminen
-    * Ajastin
-    * Aikahistoria
+* Uuden käyttäjän luonti
+* Kirjautuminen
+* Ajastin
+* Aikahistoria
 
 Jokaisella näistä on oma Scene-Olio. Scene-olioita näytetään primaryStageen sijoitettuna.
 

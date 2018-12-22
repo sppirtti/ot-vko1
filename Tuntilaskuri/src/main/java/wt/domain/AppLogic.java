@@ -192,6 +192,31 @@ public class AppLogic {
         return hoursWorked + ":" + minutesWorked;
     }
     
+    public String timeWorkedForTime(Time t) {
+        Integer hoursWorked = 0;
+        Integer minutesWorked = 0;
+        
+        
+
+        if (t.getEndHour() < t.getStartHour()) {
+            hoursWorked = t.getEndHour() + 24 - t.getStartHour();
+        } else {
+            hoursWorked = t.getEndHour() - t.getStartHour();
+
+        }
+
+        if (t.getEndMinute() < t.getStartMinute()) {
+            hoursWorked = hoursWorked - 1;
+            minutesWorked = t.getEndMinute() + 60 - t.getStartMinute();
+        } else {
+            minutesWorked = t.getEndMinute() - t.getStartMinute();
+        }
+
+        if (minutesWorked < 10) {
+            return hoursWorked + ":0" + minutesWorked;
+        }
+        return hoursWorked + ":" + minutesWorked;
+    }
    
 
 }

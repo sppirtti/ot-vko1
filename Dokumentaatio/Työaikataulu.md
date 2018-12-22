@@ -15,5 +15,6 @@
 |9.12| 3 | ei edistystä, havaittu bugi tallennuksessa |
 |11.12 | 2 | bugfix aikatallennukseen, laskee työskennellyn ajan |
 |19.12 | 4 | historianäkymä toimii, ulkoasu pelkistetty|
+|22.12 | 3 | historia viimeistely, testien viimeistely |
 
 |YHTEENSÄ|33| Tuntia |

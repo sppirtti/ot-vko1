@@ -60,15 +60,30 @@ public class TimerUI extends Application {
         timeList.addAll(appLogic.getTimes());
 
         int i = 0;
+        
+        timesBox = new VBox();
+
+        if (timeList.size() > 14) {
+            i = timeList.size() - 14;
+        } else {
+            i = 0;
+        }
+
         while (i < timeList.size()) {
-            if (i == 14) {
+            if (i == timeList.size()) {
                 break;
             }
             Label tempLabel = new Label("");
             Time tempTime = timeList.get(i);
+            Integer totalHours = 0;
+            Integer totalMinutes = 0;
+
+            String TWorked = appLogic.timeWorkedForTime(tempTime);
+
             String tempText = new String();
             tempText = tempTime.getMonth().toString() + "    " + tempTime.getDay().toString() + "     " + tempTime.getStartHour()
-                    + "    " + tempTime.getStartMinute() + "    " + tempTime.getEndHour() + "    " + tempTime.getEndMinute();
+                    + "    " + tempTime.getStartMinute() + "    " + tempTime.getEndHour() + "    " + tempTime.getEndMinute()
+                    + "    " + TWorked;
             tempLabel.setText(tempText);
 
             timesBox.getChildren().add(tempLabel);
@@ -195,7 +210,7 @@ public class TimerUI extends Application {
         Scene timerScene = new Scene(timerLayout);
 
         //TIME HISTORY SCREEN
-        Label historyLabel = new Label("Mo" + " / " + "Da" + " / " + "SH/SM" + "  " + "EH/EM" );
+        Label historyLabel = new Label("Mo" + " | " + "Da" + " | " + "SH:SM" + "  " + "EH:EM" + "    Total(H:MM)");
         Button back = new Button("Back");
         VBox historyBox = new VBox();
 
@@ -318,12 +333,16 @@ public class TimerUI extends Application {
         });
 
         history.setOnAction(action -> {
+            
+            
             timeList();
             historyBox.getChildren().add(timesBox);
             primaryStage.setScene(historyScene);
         });
 
         back.setOnAction(action -> {
+            historyBox.getChildren().remove(timesBox);
+            
             primaryStage.setScene(timerScene);
         });
 

@@ -1,9 +1,7 @@
 # WorkTimer
 
-Sovelluksen avulla on mahdollista kellottaa työaikaa. Järjestelmässä on mahdollista kirjautua uudella tunnuksella tai jo voimassa olevalla.
+Sovelluksen avulla on mahdollista kellottaa työaikaa. Järjestelmässä on mahdollista kirjautua uudella tunnuksella tai jo voimassa olevalla. Sovellus tallentaa ajat ja historiasta voi tarkastella 14 viimeisintä työkertaa.
 
-
-Sovellus on vielä kehityksessä.
 
 [Työtuntiaikataulu](https://github.com/sppirtti/ot2018/blob/master/Dokumentaatio/Ty%C3%B6aikataulu.md)
 

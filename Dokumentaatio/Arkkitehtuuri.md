@@ -28,6 +28,10 @@ Yllä olevasta kuvasta selviää sovelluksen datarakenne. Käyttäjät luodaan e
 joiden avulla generoidaan käyttäjänimi. Käyttäjälle voidaan tallentaa monta Time-oliota. Time oliot kertovat 
 Työajan Kuukauden, päivän, aloitusajan sekä lopetusajan.
 
+Kokonaisuudessaan sovelluslogiikasta luokkien välillä vastaa AppLogic luokka.
+
+Sovelluksen osien suhteita kuvaa alla oleva luokkakaavio:
+
 <img src="https://raw.githubusercontent.com/sppirtti/ot2018/master/Dokumentaatio/arkkitehtuuri.png" width=$>
 
 ## Tallennus

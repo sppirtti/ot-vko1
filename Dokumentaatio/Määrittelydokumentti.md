@@ -6,7 +6,7 @@ Sovelluksen avulla on tarkoitusta seurata työaikoja. Sovellukseen on mahdollisu
 
 ## Käyttäjät
 
-Sovellus luodaan aluksi yhdellä käyttäjällä, työntekijällä. Myöhemmin saatetaan lisätä mahdollisuus rekisteröityä esimiehenä jolloin voi tarkastella muiden käyttäjien työaikoja yms.
+Sovellukseen on mahdollista luoda käyttäjä. Käyttäjän tarvitsee syöttää vain etunimi ja sukunimi. Käyttäjänimi generoidaan etunimen ensimmäisen kirjaimen ja sukunimen kolmen ensimmäisen kirjaimen yhdistelmänä. Myöhemmin saatetaan lisätä esimiestunnukset joiden avulla voi tarkastella muiden työaikaa.
 
 ## Käyttöliittymäluonnos
 
@@ -19,18 +19,18 @@ Käyttöliittymässä on neljä ruutua, yksi sisäänkirjautumiselle, yksi uuden
 ### Ennen Kirjautumista
 
 - Käyttäjä voi luoda uuden tunnuksen
-  - Uniikkikäyttäjätunnus, minimi 4 merkkiä. Muodostetaan esim. sukunimi 3 ensimmäistä kirjainta ja etunimen ensimmäinen kirjain.
+  - Uniikkikäyttäjätunnus, minimi 4 merkkiä. Muodostetaan ottamalla sukunimi 3 ensimmäistä kirjainta ja etunimen ensimmäinen kirjain
   
  - Käyttäjä voi kirjautua järjestelmään
-   - Käyttäjän tarvitsee tietää vain tunnus, ja jatkossa ehkä salasana
-   - Jos käyttäjää ei ole, ei voi kirjautua sisään (Huomautusikkuna/error)
+   - Käyttäjän tarvitsee tietää vain käyttäjänimi
+   - Jos käyttäjää ei ole, ei voi kirjautua sisään (virheviesti)
    
 ### Kirjautumisen jälkeen
  
  - Käyttäjä voi leimata työnajan alkaneeksi
  - Käyttäjä voi leimata työajan loppuneeksi
  - Käyttäjä voi kirjautua ulos järjestelmästä
- - Käyttäjä voi nähdä edelliset työaikansa (esim. kuukauden ajalta)
+ - Käyttäjä voi nähdä edelliset työaikansa (14 työkerran ajalta)
  
 ## Jatkokehitysideoita
 
@@ -42,4 +42,4 @@ Perusversion jälkeen voidaan sovellukseen lisätä paljon toiminnallisukksia, e
 - Palkanmaksu työajan mukaan
 - Vapaapäivät yms. poikkeustilanteet
 - Salasana käyttäjätunnukselle
-- hienoja kuvaajia yms. dataa
+- ohjelman siirtäminen verkkoon

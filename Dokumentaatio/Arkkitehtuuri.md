@@ -5,6 +5,8 @@
 Ohjelman rakenne on kolmitasoinen. Koodin pakkausrakenteessa on kolme pakkausta, userinterface, domain ja dao.
 Koodin pakkausrakenne näyttää tältä:
 
+<img src="https://raw.githubusercontent.com/sppirtti/ot2018/master/Dokumentaatio/rakennekerrokset.png" width=$>
+
 Pakkaus userinterface sisältää javaFX:llä koodatun käyttöliittymän. Domain sisältää sovelluslogiikan sekä aika- 
 ja käyttäjä-oliot. Dao vastaa tekstitiedostotallennuksesta.
 

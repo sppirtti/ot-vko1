@@ -13,6 +13,8 @@ Sovellus on vielä kehityksessä.
 
 [Käyttöohje](https://github.com/sppirtti/ot2018/blob/master/Dokumentaatio/K%C3%A4ytt%C3%B6ohje.md)
 
+[Testausdokumentti](https://github.com/sppirtti/ot2018/blob/master/Dokumentaatio/Testausdokumentti.md)
+
 ## Julkaisut
 
 [Release 1](https://github.com/sppirtti/ot2018/releases)
@@ -21,4 +23,24 @@ Sovellus on vielä kehityksessä.
 
 [Release 3 (Loppupalautus)](https://github.com/sppirtti/ot2018/releases/tag/Loppupalautus)
 
+### Komentorivitoiminnot
 
+Testien suoritus:
+
+    mvn test
+  
+Testikattavuusraportti:
+
+    mvn jacoco:report
+    
+Jar generointi:
+    
+    mvn package
+    
+JavaDoc generointi:
+
+    mvn javadoc:javadoc
+    
+Checkstyle generointi:
+  
+    mvn jxr:jxr checkstyle:checkstyle

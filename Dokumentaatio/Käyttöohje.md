@@ -1,5 +1,9 @@
 # Käyttöohje Työaika ajastimelle
 
+## Ohjelman lataus ja asennus
+
+Ohjelman voi ladata viimeisimmästä releasesta. Releaset on numeroitu julkaisujärjestyksessä siten että 1 on vanhin. Lataa uusin release ja käynnistä Jar tiedosto. Jar luo kansioon, jossa se käynnistetään, users.txt ja times.txt kansiot. Ohjelmaa ei tarvitse erikseen asentaa vaan on se valmis käytettäväksi!   
+
 ### Uuden käyttäjän luonti
 
 <img src="https://raw.githubusercontent.com/sppirtti/ot2018/master/Dokumentaatio/create.png" width=$>

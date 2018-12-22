@@ -11,8 +11,14 @@ Sovellus on vielä kehityksessä.
 
 [Arkkitehtuuri](https://github.com/sppirtti/ot2018/blob/master/Dokumentaatio/Arkkitehtuuri.md)
 
+[Käyttöohje](https://github.com/sppirtti/ot2018/blob/master/Dokumentaatio/K%C3%A4ytt%C3%B6ohje.md)
+
+## Julkaisut
+
 [Release 1](https://github.com/sppirtti/ot2018/releases)
 
 [Release 2](https://github.com/sppirtti/ot2018/releases/tag/viikko6)
 
-[Käyttöohje](https://github.com/sppirtti/ot2018/blob/master/Dokumentaatio/K%C3%A4ytt%C3%B6ohje.md)
+[Release 3 (Final)](https://github.com/sppirtti/ot2018/releases/tag/Loppupalautus)
+
+

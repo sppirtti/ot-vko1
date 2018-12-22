@@ -31,7 +31,15 @@ public class AppLogic {
         this.timeDao = timeDao;
 
     }
-
+    
+    /**
+     * Käyttäjä syöttää etunimen ja sukunimen joista luodaan uusi käyttäjä.
+     * 
+     * @param firstname
+     * @param surname
+     * @return Boolean 
+     */
+    
     public boolean createNewUser(String firstname, String surname) {
 
         User u = new User(firstname, surname);
@@ -50,6 +58,12 @@ public class AppLogic {
 
         return true;
     }
+    
+    /**
+     * Käyttäjän sisäänkirjautuminen. Tälle käyttäjälle tallennetaan ajat.
+     * @param username
+     * @return 
+     */
 
     public boolean userLogin(String username) {
         User user = userDao.findByUsername(username);
@@ -133,6 +147,9 @@ public class AppLogic {
         return endMinute;
     }
 
+    /**
+     * Kirjautuu käyttäjän ulos, jotta voidaan ottaa eri käyttäjä tallennukseen
+     */
     public void logOutUser() {
         u = null;
     }
@@ -140,6 +157,11 @@ public class AppLogic {
     public User getLoggedUser() {
         return u;
     }
+    
+    /**
+     * Luo uuden aikaolion tietylle käyttjälle.
+     * @return 
+     */
 
     public boolean createNewTime() {
 
@@ -154,6 +176,11 @@ public class AppLogic {
         }
         return true;
     }
+    
+    /**
+     * Listaa kaikki sisäänkirjautuneen käyttäjän ajat.
+     * @return 
+     */
 
     public List<Time> getTimes() {
 
@@ -167,6 +194,11 @@ public class AppLogic {
                 .collect(Collectors.toList());
 
     }
+    
+    /**
+     * Laskee työskennellyn ajan ajastimelle. Vain nykyiselle ajalle.
+     * @return 
+     */
 
     public String timeWorked() {
         Integer hoursWorked = 0;
@@ -191,6 +223,12 @@ public class AppLogic {
         }
         return hoursWorked + ":" + minutesWorked;
     }
+    
+    /**
+     * Laskee työajan mille tahansa ajalle t.
+     * @param t
+     * @return 
+     */
     
     public String timeWorkedForTime(Time t) {
         Integer hoursWorked = 0;

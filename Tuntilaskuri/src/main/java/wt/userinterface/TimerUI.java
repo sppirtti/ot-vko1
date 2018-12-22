@@ -55,6 +55,9 @@ public class TimerUI extends Application {
 
     }
 
+    /**
+     * Listaa ajat omiin Label olioihin ja laittaa ne muotoon jotta niitä voidaan tarkastella historiassa.
+     */
     public void timeList() {
         List<Time> timeList = new ArrayList<>();
         timeList.addAll(appLogic.getTimes());

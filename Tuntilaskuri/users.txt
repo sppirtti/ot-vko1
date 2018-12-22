@@ -5,3 +5,6 @@ elli;kiiski;ekii
 kissa;koira;kkoi
 koira;kissa;kkis
 john;doe;jdoe
+120938;73829047;1738
+17;38;138
+17;382;1382

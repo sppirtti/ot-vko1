@@ -13,7 +13,7 @@ import java.util.List;
 import java.util.Scanner;
 
 /**
- *
+ *Käyttäjätallennukseen liittyvät toiminnot.
  * @author Samuli
  */
 public class UserFileDao implements UserDao {
@@ -21,6 +21,12 @@ public class UserFileDao implements UserDao {
     List<User> users;
     String filename;
 
+    /**
+     * Hakee käyttäjät tiedostosta ja siirtää ne arrayListiin.
+     *
+     * @param filename
+     * @throws Exception
+     */
     public UserFileDao(String filename) throws Exception {
         this.filename = filename;
         users = new ArrayList<>();
@@ -42,6 +48,11 @@ public class UserFileDao implements UserDao {
         }
     }
 
+    /**
+     * Tallentaa arrayListin tekstitiedostoon.
+     *
+     * @throws Exception
+     */
     private void save() throws Exception {
 
         try (FileWriter fw = new FileWriter(new File(filename))) {
@@ -51,6 +62,12 @@ public class UserFileDao implements UserDao {
         }
     }
 
+    /**
+     * Etsii tietyn käyttäjän käyttäjänimen perusteella.
+     *
+     * @param username
+     * @return
+     */
     @Override
     public User findByUsername(String username
     ) {
@@ -63,6 +80,13 @@ public class UserFileDao implements UserDao {
 
     }
 
+    /**
+     * Lisää uuden käyttäjän ArrayListiin ja suorittaa save() metodin.
+     *
+     * @param user
+     * @return
+     * @throws Exception
+     */
     @Override
     public User createUser(User user) throws Exception {
 

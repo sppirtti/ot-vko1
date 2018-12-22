@@ -15,6 +15,8 @@ import wt.domain.User;
 
 /**
  *
+ * Aikatallennukseen liittyvät toiminnot.
+ * 
  * @author Samuli
  */
 public class TimeFileDao implements TimeDao {
@@ -22,6 +24,12 @@ public class TimeFileDao implements TimeDao {
     public List<Time> times;
     private String filename;
 
+    /**
+     * Lukee tiedostosta nykyiset ajat arrayListiin.
+     * @param filename
+     * @param users
+     * @throws Exception 
+     */
     public TimeFileDao(String filename, UserFileDao users) throws Exception {
 
         this.filename = filename;
@@ -46,6 +54,11 @@ public class TimeFileDao implements TimeDao {
 
         }
     }
+    
+    /**
+     * Kirjoittaa arrayListin tekstitiedostoon luettavaan muotoon.
+     * @throws Exception 
+     */
 
     public void save() throws Exception {
         try (FileWriter fw = new FileWriter(new File(filename))) {
@@ -62,6 +75,13 @@ public class TimeFileDao implements TimeDao {
         }
     }
 
+    /**
+     * lisää uuden ajan arraylistiin ja suorittaa save() metodin.
+     * @param time
+     * @return
+     * @throws Exception 
+     */
+    
     @Override
     public Time addTime(Time time) throws Exception {
         times.add(time);

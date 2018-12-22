@@ -5,6 +5,7 @@ import java.io.FileWriter;
 import java.util.ArrayList;
 import java.util.List;
 import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertFalse;
 import static org.junit.Assert.assertTrue;
 import org.junit.Before;
 import org.junit.Rule;
@@ -31,8 +32,8 @@ public class TimeFileDaoTest {
         timeFile = testFolder.newFile("testfile_times.txt");
         userFile = testFolder.newFile("testfile_users.txt");
 
-        try (FileWriter fw = new FileWriter(userFile.getAbsolutePath())) {
-            fw.write("Samuli;Pirttimäki;SPir");
+        try (FileWriter fw = new FileWriter(timeFile.getAbsolutePath())) {
+            fw.write("spir;10;10;12;30;13;40");
         }
 
         udao = new UserFileDao(userFile.getAbsolutePath());
@@ -50,12 +51,12 @@ public class TimeFileDaoTest {
         assertEquals(0, times.size());
 
     }
-    
+
     @Test
     public void AddingNewTimesWorks() throws Exception {
-        Time t = new Time ("spir", 10,10,10,10,11,10);
+        Time t = new Time("spir", 10, 10, 10, 10, 11, 10);
         dao.addTime(t);
-        
+
         assertTrue(dao.getAll().size() > 0);
     }
 

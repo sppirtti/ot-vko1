@@ -126,15 +126,22 @@ public class AppLogicTest {
     @Test
     public void getAllTimesWorks() {
         t = new Time("kesa", 10, 10, 12, 30, 20, 0);
-        
+
     }
-    
+
     @Test
     public void timeWorkedNoTimeReturnsZeros() {
 
-        
         String temp = appLogic.timeWorked();
-        
+
         assertEquals("0:00", temp);
+    }
+
+    @Test
+    public void OverNightTimeWorkedCorrect() {
+        Time s = new Time("psir", 10, 12, 23, 55, 00, 5);
+        String temp = appLogic.timeWorkedForTime(s);
+
+        assertEquals("0:10", temp);
     }
 }

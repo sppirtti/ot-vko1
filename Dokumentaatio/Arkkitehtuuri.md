@@ -36,14 +36,38 @@ Sovelluksen osien suhteita kuvaa alla oleva luokkakaavio:
 
 ## Tallennus
 
+Sovellus hyödyntää Data Access Object suunnittelumallia tallennuksessa. Luokat on eristetty rajapintojen taakse ja sovelluslogiikka käyttää näitä luokkia rajapinnan kautta. Dao-luokat lukevata ja tallentavat tekstitiedostoja. Tekstitiedostoiden nimet on määritelty siten että käyttäjät tallentuu users.txt:hen ja ajat taas times.txt:hen.
+
 Sovellus tallentaa käyttäjät muodossa
 
     etunimi;sukunimi;käyttäjätunnus
 
-
 Ja ajat muodossa
 
     käyttäjä;kuukausi;päivä;aloitustunti;aloitusminuutti;lopetustunti;lopetusminuutti
+    
+Molemmissa eri arvot on erotettu puolipistellä. Aika-oliossa käyttäjä tarkoittaa käyttäjätunnusta.
 
+## Päätoiminnallisuudet
+
+Sovelluksessa on paljon toimintoja, joista suuri osa on yksinkertaisia. Päätoimintoja ovat isommat toiminnot jotka hyödyntävät useaa luokkaa. Päätoimintoja ovat:
+* Uuden käyttäjän luonti
+* Sisäänkirjautuminen
+* Ajastimen käyttö
+
+Sekvenssikaavio uuden käyttäjän luonnille:
 
 <img src="https://raw.githubusercontent.com/sppirtti/ot2018/master/Dokumentaatio/newUser.png" width=$>
+
+### Muita toiminnallisuuksia
+
+Sovelluksessa on paljon pieniä toiminnallisuuksia jotka käyttävät yhtä tai useampaa luokkaa. Esimerkiksi työajan laskeminen, kun tiedetään aloitusaika ja lopetusaika tapahtuu kokonaan sovelluslogiikan sisällä.
+
+## Ohjelman heikkoudet
+
+#### Sovelluslogiikka
+Sovelluslogiikkaan kertyi paljon simppeleitä asioita jotka voisi siirtää myös muihin luokkiin.
+#### DAO
+Dao-luokat ovat loppujen lopuksi hyvin samanlaisia ja niissä oleva koodi on toisteista.
+#### Käyttöliittymä
+Myös käyttöliittymää olisi voinut eritellä. Nyt kaikki on vain yhdessä pötkössä. Käyttöliittymästä voisi eritellä esim. jokaisen Scene ikkunan omaan metodiinsa.
